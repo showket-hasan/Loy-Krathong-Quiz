@@ -1,0 +1,2612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="artifact-type" content="tool">
+<meta name="design-style" content="charter">
+<title>Loy Krathong Cultural &amp; Academic Pretest Assessment (CEFR B2–C1)</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light;
+
+  /* 1. Charter palette tokens */
+  --background: #f7f4ec;
+  --surface-container-low: #fffdf8;
+  --surface-container: #ece5d4;
+  --surface-container-high: #e3dac4;
+
+  --on-surface: #1c1f26;
+  --on-surface-variant: #4f5360;
+
+  --outline: #b08d57;
+  --outline-variant: #d9cfb8;
+
+  --primary: #14213d;
+  --on-primary: #f7f4ec;
+  --primary-container: #e3e6ee;
+  --on-primary-container: #14213d;
+  --secondary: #2d5a4a;
+  --tertiary: #8a6a35;
+  --error: #9b2c2c;
+  --on-error: #f7f4ec;
+
+  --data-1: #14213d;
+  --data-2: #8a6a35;
+  --data-3: #2d5a4a;
+  --data-4: #5b7aa0;
+  --data-context: #c2bba9;
+
+  /* 2. User-requested Times New Roman typography */
+  --font-headline: 'Times New Roman', Times, 'Libre Caslon Text', Georgia, serif;
+  --font-body: 'Times New Roman', Times, 'Libre Caslon Text', Georgia, serif;
+  --font-label: 'Times New Roman', Times, Georgia, serif;
+
+  /* Shape */
+  --rounded: 0.125rem;
+  --rounded-lg: 0.125rem;
+  --rounded-full: 0.125rem;
+
+  /* Style effects */
+  --brass-rule: 2px solid var(--outline);
+  --hairline: 1px solid var(--outline-variant);
+  --leaf-underline: 0 1px 0 var(--outline-variant);
+
+  /* 3. Shared semantic, focus, type scale, spacing, and motion tokens */
+  --positive: #2d5a4a;
+  --positive-bg: #e7f0ec;
+  --warning: #8a6a35;
+  --warning-bg: #f4ecdc;
+  --error-bg: #f8e9e9;
+  --focus: #14213d;
+  --title-brass-text: color-mix(in srgb, var(--outline) 75%, var(--on-primary));
+  --title-lede-text: color-mix(in srgb, var(--on-primary) 82%, var(--primary));
+
+  --display-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.35rem);
+  --headline-size: clamp(1.3rem, 1.1rem + 0.55vw, 1.6rem);
+  --subhead-size: clamp(1.0625rem, 1rem + 0.25vw, 1.25rem);
+  --body-size: clamp(1rem, 0.95rem + 0.15vw, 1.0625rem);
+  --label-size: 0.78rem;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+}
+
+/* Base reset */
+*, *::before, *::after { box-sizing: border-box; }
+html, body {
+  overflow-x: clip;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--on-surface);
+  font-family: var(--font-body);
+  font-size: var(--body-size);
+  line-height: 1.58;
+  -webkit-font-smoothing: antialiased;
+}
+header { position: static !important; }
+button, input, select, textarea { font-family: inherit; }
+
+/* Focus accessibility */
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Header Title Band */
+.title-band {
+  background: var(--primary);
+  color: var(--on-primary);
+  padding: var(--space-xl) var(--space-lg) var(--space-lg);
+  border-bottom: 3px solid var(--outline);
+}
+.title-band-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: end;
+}
+.kicker {
+  font-family: var(--font-label);
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--title-brass-text);
+  margin: 0 0 var(--space-xs);
+}
+.title-band h1 {
+  font-family: var(--font-headline);
+  font-weight: 400;
+  font-size: var(--display-size);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--on-primary);
+  margin: 0 0 var(--space-sm);
+}
+.title-band .lede {
+  color: var(--title-lede-text);
+  font-size: var(--subhead-size);
+  margin: 0;
+  max-width: 65ch;
+}
+.student-meta-panel {
+  background: color-mix(in srgb, var(--primary) 80%, var(--on-primary) 10%);
+  border: 1px solid var(--outline);
+  border-radius: var(--rounded);
+  padding: var(--space-md);
+  display: grid;
+  gap: var(--space-sm);
+}
+.meta-field-group {
+  display: grid;
+  gap: var(--space-xs);
+}
+.meta-field-group label {
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--title-brass-text);
+}
+.meta-input {
+  width: 100%;
+  padding: var(--space-sm);
+  font-size: var(--body-size);
+  background: var(--surface-container-low);
+  color: var(--on-surface);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--rounded);
+  min-height: 44px;
+}
+.meta-input:focus {
+  border-color: var(--outline);
+}
+
+/* Main Page Grid */
+.page-grid {
+  display: grid;
+  gap: var(--space-xl);
+  padding: var(--space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.page-grid * { min-width: 0; }
+
+/* Action Toolbar */
+.toolbar-card {
+  background: var(--surface-container-low);
+  border-top: var(--brass-rule);
+  border-bottom: var(--hairline);
+  border-left: var(--hairline);
+  border-right: var(--hairline);
+  border-radius: var(--rounded);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+}
+.toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+}
+.toolbar-status {
+  font-size: 0.95rem;
+  color: var(--on-surface-variant);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  min-height: 44px;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--rounded);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  border: 1px solid var(--primary);
+  transition: background-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out);
+}
+.btn-primary {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+.btn-primary:hover {
+  background: color-mix(in srgb, var(--primary) 85%, var(--on-primary));
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+}
+.btn-secondary:hover {
+  background: var(--primary-container);
+}
+.btn-subtle {
+  background: var(--surface-container);
+  color: var(--on-surface);
+  border-color: var(--outline-variant);
+}
+.btn-subtle:hover {
+  background: var(--surface-container-high);
+}
+.btn-danger {
+  background: transparent;
+  color: var(--error);
+  border-color: var(--error);
+}
+.btn-danger:hover {
+  background: var(--error-bg);
+}
+.btn-sm {
+  min-height: 38px;
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 0.875rem;
+}
+
+/* Figure Cards (KPI Row) */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+  gap: var(--space-md);
+}
+.figure-card {
+  background: var(--surface-container-low);
+  border-top: var(--brass-rule);
+  box-shadow: var(--leaf-underline);
+  border-radius: var(--rounded-lg);
+  padding: var(--space-md) var(--space-lg);
+  display: grid;
+  gap: var(--space-xs);
+  align-content: start;
+}
+.figure-label {
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+}
+.figure-value {
+  font-family: var(--font-headline);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 1.3rem + 1vw, 2.1rem);
+  font-variant-numeric: tabular-nums lining-nums;
+  line-height: 1.15;
+  color: var(--on-surface);
+}
+.figure-delta {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--tertiary);
+}
+.figure-delta.positive { color: var(--positive); }
+.figure-delta.error { color: var(--error); }
+
+/* Section Headers */
+.section-head {
+  border-top: var(--brass-rule);
+  padding-top: var(--space-md);
+  border-bottom: var(--hairline);
+  padding-bottom: var(--space-sm);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-sm);
+}
+.section-head h2 {
+  font-family: var(--font-headline);
+  font-weight: 400;
+  font-size: var(--headline-size);
+  margin: 0;
+  color: var(--on-surface);
+}
+.section-kicker {
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tertiary);
+}
+
+/* Diagnostic Analytics & Navigation Map */
+.analytics-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: var(--space-lg);
+}
+.leaf-panel {
+  background: var(--surface-container-low);
+  border-top: var(--brass-rule);
+  border-bottom: var(--hairline);
+  border-left: var(--hairline);
+  border-right: var(--hairline);
+  border-radius: var(--rounded);
+  padding: var(--space-lg);
+}
+.leaf-panel h3 {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: var(--subhead-size);
+  margin: 0 0 var(--space-sm);
+  color: var(--primary);
+}
+
+/* Question Navigator Grid */
+.nav-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+}
+.q-chip {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--rounded);
+  background: var(--surface-container-low);
+  color: var(--on-surface);
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: background-color var(--dur-micro) var(--ease-out);
+}
+.q-chip:hover {
+  background: var(--primary-container);
+}
+.q-chip.answered {
+  background: var(--primary-container);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.q-chip.correct {
+  background: var(--positive-bg);
+  border-color: var(--positive);
+  color: var(--positive);
+}
+.q-chip.partial {
+  background: var(--warning-bg);
+  border-color: var(--warning);
+  color: var(--warning);
+}
+.q-chip.incorrect {
+  background: var(--error-bg);
+  border-color: var(--error);
+  color: var(--error);
+}
+.legend-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+  font-size: 0.85rem;
+  color: var(--on-surface-variant);
+}
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+.legend-swatch {
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--rounded);
+  display: inline-block;
+}
+.swatch-unanswered { background: var(--surface-container-low); }
+.swatch-answered { background: var(--primary-container); border-color: var(--primary); }
+.swatch-correct { background: var(--positive-bg); border-color: var(--positive); }
+.swatch-partial { background: var(--warning-bg); border-color: var(--warning); }
+.swatch-incorrect { background: var(--error-bg); border-color: var(--error); }
+
+/* Tables */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+table.charter-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background: var(--surface-container-low);
+}
+table.charter-table thead th {
+  background: var(--surface-container-high);
+  color: var(--on-surface);
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: var(--brass-rule);
+}
+table.charter-table tbody td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: var(--hairline);
+  vertical-align: top;
+}
+table.charter-table tbody tr.active-band {
+  background: var(--primary-container);
+}
+.num-cell {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Visual Diagrams Grid */
+.diagrams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr));
+  gap: var(--space-lg);
+}
+.diagram-box {
+  background: var(--surface-container-low);
+  border-top: var(--brass-rule);
+  border-bottom: var(--hairline);
+  border-left: var(--hairline);
+  border-right: var(--hairline);
+  border-radius: var(--rounded);
+  padding: var(--space-lg);
+  display: grid;
+  gap: var(--space-md);
+}
+.diagram-box svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.diagram-caption {
+  font-size: 0.9rem;
+  color: var(--on-surface-variant);
+  border-top: var(--hairline);
+  padding-top: var(--space-sm);
+  margin: 0;
+}
+
+/* Filter Bar */
+.filter-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  align-items: center;
+}
+.filter-btn {
+  min-height: 44px;
+  padding: var(--space-xs) var(--space-md);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--rounded);
+  background: var(--surface-container-low);
+  color: var(--on-surface);
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.filter-btn[aria-pressed="true"] {
+  background: var(--primary);
+  color: var(--on-primary);
+  border-color: var(--primary);
+}
+
+/* Question Cards */
+.questions-stack {
+  display: grid;
+  gap: var(--space-lg);
+}
+.band-banner {
+  background: var(--surface-container);
+  border-left: 3px solid var(--primary);
+  border-top: var(--hairline);
+  border-bottom: var(--hairline);
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.band-banner h3 {
+  margin: 0;
+  font-size: var(--subhead-size);
+  font-weight: 700;
+  color: var(--primary);
+}
+.band-tag {
+  border: 1px solid var(--outline);
+  padding: 2px var(--space-sm);
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--tertiary);
+  border-radius: var(--rounded);
+}
+
+.question-card {
+  background: var(--surface-container-low);
+  border-top: var(--brass-rule);
+  border-right: var(--hairline);
+  border-bottom: var(--hairline);
+  border-left: var(--hairline);
+  border-radius: var(--rounded);
+  padding: var(--space-lg);
+  display: grid;
+  gap: var(--space-md);
+}
+.question-card.state-correct { border-top-color: var(--positive); }
+.question-card.state-partial { border-top-color: var(--warning); }
+.question-card.state-incorrect { border-top-color: var(--error); }
+
+.q-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  border-bottom: var(--hairline);
+  padding-bottom: var(--space-sm);
+}
+.q-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.q-number {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+.q-domain {
+  border: 1px solid var(--outline);
+  padding: 1px var(--space-sm);
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tertiary);
+  border-radius: var(--rounded);
+}
+.q-status-badge {
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 2px var(--space-sm);
+  border-radius: var(--rounded);
+  border: 1px solid var(--outline-variant);
+}
+.q-status-badge.correct {
+  background: var(--positive-bg);
+  color: var(--positive);
+  border-color: var(--positive);
+}
+.q-status-badge.partial {
+  background: var(--warning-bg);
+  color: var(--warning);
+  border-color: var(--warning);
+}
+.q-status-badge.incorrect {
+  background: var(--error-bg);
+  color: var(--error);
+  border-color: var(--error);
+}
+
+.q-prompt {
+  margin: 0;
+  font-size: 1.0625rem;
+  color: var(--on-surface);
+  max-width: 72ch;
+}
+
+/* MCQ Options */
+.options-list {
+  display: grid;
+  gap: var(--space-sm);
+}
+.option-label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--rounded);
+  background: var(--background);
+  cursor: pointer;
+  min-height: 44px;
+  transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+}
+.option-label:hover {
+  background: var(--primary-container);
+}
+.option-label input[type="radio"] {
+  margin-top: 0.25rem;
+  accent-color: var(--primary);
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.option-label.selected {
+  background: var(--primary-container);
+  border-color: var(--primary);
+}
+.option-label.is-correct-choice {
+  background: var(--positive-bg);
+  border-color: var(--positive);
+}
+.option-label.is-wrong-choice {
+  background: var(--error-bg);
+  border-color: var(--error);
+}
+.option-letter {
+  font-weight: 700;
+  color: var(--primary);
+  min-width: 1.35rem;
+}
+
+/* Reading Passages & Open-Ended Inputs */
+.passage-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: start;
+}
+.passage-card {
+  background: var(--surface-container-low);
+  border-top: var(--brass-rule);
+  border-right: var(--hairline);
+  border-bottom: var(--hairline);
+  border-left: var(--hairline);
+  border-radius: var(--rounded);
+  padding: var(--space-lg);
+}
+.passage-card h3 {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: var(--headline-size);
+  margin: 0 0 var(--space-xs);
+  color: var(--primary);
+}
+.passage-meta {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--on-surface-variant);
+  border-bottom: var(--hairline);
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+.passage-para {
+  margin: 0 0 var(--space-md);
+  text-align: left;
+  max-width: 65ch;
+}
+.para-label {
+  font-weight: 700;
+  color: var(--primary);
+  margin-right: var(--space-xs);
+}
+
+.open-input-group {
+  display: grid;
+  gap: var(--space-xs);
+}
+.open-input-group label {
+  font-size: var(--label-size);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+}
+.open-text-input, .open-textarea {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--body-size);
+  background: var(--background);
+  color: var(--on-surface);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--rounded);
+}
+.open-text-input { min-height: 44px; }
+.open-textarea { min-height: 92px; resize: vertical; line-height: 1.5; }
+.word-counter {
+  font-size: 0.85rem;
+  color: var(--on-surface-variant);
+  font-variant-numeric: tabular-nums;
+}
+.word-counter.over-limit {
+  color: var(--error);
+  font-weight: 700;
+}
+
+.q-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* Academic Feedback Box */
+.feedback-panel {
+  background: var(--surface-container);
+  border-left: 3px solid var(--primary);
+  border-radius: var(--rounded);
+  padding: var(--space-md);
+  display: grid;
+  gap: var(--space-sm);
+}
+.feedback-panel.fb-correct {
+  background: var(--positive-bg);
+  border-left-color: var(--positive);
+}
+.feedback-panel.fb-partial {
+  background: var(--warning-bg);
+  border-left-color: var(--warning);
+}
+.feedback-panel.fb-incorrect {
+  background: var(--error-bg);
+  border-left-color: var(--error);
+}
+.feedback-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--on-surface);
+}
+.feedback-rationale {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--on-surface);
+}
+.rubric-checklist {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+  display: grid;
+  gap: var(--space-xs);
+}
+.rubric-hit { color: var(--positive); font-weight: 700; }
+.rubric-miss { color: var(--error); }
+
+.hidden { display: none !important; }
+
+/* Source Note Footer */
+.source-footer {
+  border-top: var(--brass-rule);
+  padding: var(--space-lg) 0 var(--space-xl);
+  font-size: 0.9rem;
+  color: var(--on-surface-variant);
+  display: grid;
+  gap: var(--space-xs);
+}
+
+@media (max-width: 900px) {
+  .title-band-inner,
+  .analytics-split,
+  .passage-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-grid { padding: var(--space-md); }
+  .title-band { padding: var(--space-lg) var(--space-md); }
+  .toolbar-card { padding: var(--space-md); }
+  .question-card, .passage-card, .leaf-panel, .diagram-box { padding: var(--space-md); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="title-band">
+  <div class="title-band-inner">
+    <div>
+      <p class="kicker">Grade 8 Bilingual Humanities &amp; Academic Reading Diagnostic · CEFR B2–C1</p>
+      <h1>Loy Krathong Cultural &amp; Academic Pretest Assessment</h1>
+      <p class="lede">An upper-intermediate to advanced diagnostic evaluating Thai cultural terminology, Sukhothai historiography, Buddhist–Brahmanical syncretism, river ecology, and IELTS-style academic reading comprehension across 35 scored items.</p>
+    </div>
+    <div class="student-meta-panel">
+      <div class="meta-field-group">
+        <label for="student-name">Student Full Name</label>
+        <input type="text" id="student-name" class="meta-input" placeholder="e.g., Pitchaya Sukhum (Grade 8/2)" oninput="handleStudentMetaChange()">
+      </div>
+      <div class="meta-field-group">
+        <label for="student-id">Class / Bilingual Track ID</label>
+        <input type="text" id="student-id" class="meta-input" placeholder="e.g., EP-M2-014" oninput="handleStudentMetaChange()">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page-grid">
+
+  <!-- Control Toolbar -->
+  <section class="toolbar-card" aria-label="Assessment Controls">
+    <div class="toolbar-status" id="toolbar-status">
+      Status: In Progress — Complete all 35 items or check individual questions for immediate rationale.
+    </div>
+    <div class="toolbar-actions">
+      <button type="button" class="btn btn-primary" onclick="gradeEntireAssessment()">Grade Full Pretest (35 Items)</button>
+      <button type="button" class="btn btn-secondary" id="toggle-refs-btn" onclick="toggleReferenceCompendium()">Hide Reference Aids</button>
+      <button type="button" class="btn btn-subtle" onclick="exportScoreReport()">Export Score Report</button>
+      <button type="button" class="btn btn-danger" id="reset-btn" onclick="handleResetPretest(this)">Reset All Answers</button>
+    </div>
+  </section>
+
+  <!-- Live Diagnostic Scoreboard (Lead with the Outcome) -->
+  <section aria-labelledby="scoreboard-heading">
+    <div class="section-head">
+      <h2 id="scoreboard-heading">Diagnostic Score Summary &amp; CEFR Placement</h2>
+      <span class="section-kicker">Automatic Grading Engine · Live Telemetry</span>
+    </div>
+    <div class="kpi-grid" style="margin-top: var(--space-md);">
+      <div class="figure-card">
+        <span class="figure-label">Assessment Completion</span>
+        <span class="figure-value" id="kpi-completion">0 / 35</span>
+        <span class="figure-delta" id="kpi-completion-sub">Part I: 0/25 · Part II: 0/10</span>
+      </div>
+      <div class="figure-card">
+        <span class="figure-label">Composite Pretest Score</span>
+        <span class="figure-value" id="kpi-score">-- / 35.0</span>
+        <span class="figure-delta" id="kpi-percent">Awaiting Grading</span>
+      </div>
+      <div class="figure-card">
+        <span class="figure-label">Estimated CEFR Band</span>
+        <span class="figure-value" id="kpi-cefr">Pending</span>
+        <span class="figure-delta" id="kpi-cefr-note">Target Band: B2–C1 (Grade 8 Bilingual)</span>
+      </div>
+      <div class="figure-card">
+        <span class="figure-label">Part I vs. Part II Split</span>
+        <span class="figure-value" id="kpi-split">--% / --%</span>
+        <span class="figure-delta" id="kpi-split-note">MCQ Knowledge vs. IELTS Reading</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Domain Analytics & Question Navigator -->
+  <section class="analytics-split" aria-label="Domain Mastery and Question Navigator">
+    <div class="leaf-panel">
+      <h3>Domain Mastery Profile &amp; CEFR Band Criteria</h3>
+      <div id="domain-chart-container" style="min-height: 220px;"></div>
+      <div class="table-wrap" style="margin-top: var(--space-md);">
+        <table class="charter-table" aria-label="CEFR B2-C1 Pretest Placement Rubric">
+          <thead>
+            <tr>
+              <th>Score Band</th>
+              <th>CEFR Level</th>
+              <th>IELTS Equiv.</th>
+              <th>Diagnostic Interpretation</th>
+            </tr>
+          </thead>
+          <tbody id="rubric-tbody">
+            <tr data-band="below">
+              <td class="num-cell">0 – 17.0</td>
+              <td>B1+ Developing</td>
+              <td class="num-cell">5.0 – 5.5</td>
+              <td>Foundational cultural recognition; requires scaffolding on academic inference and abstract lexis.</td>
+            </tr>
+            <tr data-band="b2">
+              <td class="num-cell">17.5 – 24.0</td>
+              <td>B2 Upper-Intermediate</td>
+              <td class="num-cell">6.0 – 6.5</td>
+              <td>Solid command of syncretic concepts and literal passage detail; emerging precision on historiographical nuance.</td>
+            </tr>
+            <tr data-band="b2plus">
+              <td class="num-cell">24.5 – 29.5</td>
+              <td>B2+ Strong</td>
+              <td class="num-cell">6.5 – 7.0</td>
+              <td>Strong control of B2–C1 cultural discourse, ecological trade-offs, and implicit authorial stance.</td>
+            </tr>
+            <tr data-band="c1">
+              <td class="num-cell">30.0 – 35.0</td>
+              <td>C1 Proficient</td>
+              <td class="num-cell">7.5 – 8.0</td>
+              <td>Sophisticated academic literacy; synthesizes anthropological evidence, lexical precision, and critical critique.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="leaf-panel">
+      <h3>35-Item Assessment Navigator</h3>
+      <p style="margin: 0 0 var(--space-sm); font-size: 0.95rem; color: var(--on-surface-variant);">
+        Click any item number to jump directly to that question. Color states update automatically as you work and grade.
+      </p>
+      <div style="font-size: var(--label-size); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--tertiary); margin-top: var(--space-sm);">Part I: Multiple Choice (Q1–Q25)</div>
+      <div class="nav-matrix" id="nav-matrix-p1"></div>
+      <div style="font-size: var(--label-size); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--tertiary); margin-top: var(--space-md);">Part II: IELTS Passage Reading (Q26–Q35)</div>
+      <div class="nav-matrix" id="nav-matrix-p2"></div>
+      <div class="legend-row">
+        <span class="legend-item"><span class="legend-swatch swatch-unanswered"></span> Unanswered</span>
+        <span class="legend-item"><span class="legend-swatch swatch-answered"></span> Saved</span>
+        <span class="legend-item"><span class="legend-swatch swatch-correct"></span> Correct</span>
+        <span class="legend-item"><span class="legend-swatch swatch-partial"></span> Partial (0.5)</span>
+        <span class="legend-item"><span class="legend-swatch swatch-incorrect"></span> Needs Review</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visual Aids & Structured Summary Tables -->
+  <section id="reference-compendium" aria-labelledby="compendium-heading">
+    <div class="section-head">
+      <h2 id="compendium-heading">Cultural Visual Aids &amp; Reference Compendium</h2>
+      <span class="section-kicker">Explanatory Schematics &amp; Structured Tables</span>
+    </div>
+
+    <div class="diagrams-grid" style="margin-top: var(--space-md);">
+      <!-- Diagram 1: Anatomy & Symbolism of a Traditional Krathong -->
+      <div class="diagram-box">
+        <h3 style="margin: 0; font-size: var(--subhead-size); color: var(--primary);">Figure 1. Structural Anatomy &amp; Syncretic Symbolism of the Krathong</h3>
+        <svg viewBox="0 0 600 320" role="img" aria-label="Labeled schematic diagram of a traditional banana-leaf krathong showing its ritual components and symbolic meanings">
+          <rect x="0" y="0" width="600" height="320" fill="var(--background)" stroke="var(--outline-variant)" stroke-width="1"/>
+          <!-- Water surface waves -->
+          <path d="M 30 250 Q 90 240 150 250 T 270 250 T 390 250 T 510 250 T 570 250" fill="none" stroke="var(--data-4)" stroke-width="2"/>
+          <path d="M 50 268 Q 110 260 170 268 T 290 268 T 410 268 T 530 268" fill="none" stroke="var(--data-context)" stroke-width="1.5"/>
+
+          <!-- Banana trunk base (Ton Kluai) -->
+          <ellipse cx="300" cy="235" rx="115" ry="22" fill="var(--surface-container-high)" stroke="var(--primary)" stroke-width="2"/>
+          <rect x="185" y="205" width="230" height="30" fill="var(--surface-container)" stroke="var(--primary)" stroke-width="2"/>
+          <ellipse cx="300" cy="205" rx="115" ry="20" fill="var(--secondary)" stroke="var(--primary)" stroke-width="2"/>
+
+          <!-- Folded banana leaf crown (Bai Tong / Glip) -->
+          <polygon points="185,205 202,165 222,205" fill="var(--secondary)" stroke="var(--primary)" stroke-width="1.5"/>
+          <polygon points="222,205 242,162 262,205" fill="var(--secondary)" stroke="var(--primary)" stroke-width="1.5"/>
+          <polygon points="262,205 282,160 300,205" fill="var(--secondary)" stroke="var(--primary)" stroke-width="1.5"/>
+          <polygon points="300,205 320,160 338,205" fill="var(--secondary)" stroke="var(--primary)" stroke-width="1.5"/>
+          <polygon points="338,205 358,162 378,205" fill="var(--secondary)" stroke="var(--primary)" stroke-width="1.5"/>
+          <polygon points="378,205 398,165 415,205" fill="var(--secondary)" stroke="var(--primary)" stroke-width="1.5"/>
+
+          <!-- Flowers (Dok Mai) -->
+          <circle cx="248" cy="188" r="11" fill="var(--outline)" stroke="var(--primary)" stroke-width="1.5"/>
+          <circle cx="278" cy="192" r="10" fill="var(--data-2)" stroke="var(--primary)" stroke-width="1.5"/>
+          <circle cx="322" cy="192" r="10" fill="var(--data-2)" stroke="var(--primary)" stroke-width="1.5"/>
+          <circle cx="352" cy="188" r="11" fill="var(--outline)" stroke="var(--primary)" stroke-width="1.5"/>
+
+          <!-- Candle (Thian) & Flame -->
+          <rect x="294" y="120" width="12" height="72" fill="var(--surface-container-low)" stroke="var(--primary)" stroke-width="1.5"/>
+          <path d="M 300 94 Q 309 108 300 120 Q 291 108 300 94 Z" fill="var(--data-2)" stroke="var(--primary)" stroke-width="1.2"/>
+
+          <!-- Incense sticks (Thoop) -->
+          <line x1="274" y1="190" x2="262" y2="112" stroke="var(--primary)" stroke-width="2"/>
+          <circle cx="262" cy="111" r="3" fill="var(--error)"/>
+          <line x1="326" y1="190" x2="338" y2="112" stroke="var(--primary)" stroke-width="2"/>
+          <circle cx="338" cy="111" r="3" fill="var(--error)"/>
+
+          <!-- Coin offering inside -->
+          <circle cx="300" cy="200" r="7" fill="var(--outline)" stroke="var(--primary)" stroke-width="1.2"/>
+
+          <!-- Leader Lines & Annotations -->
+          <!-- Candle -->
+          <line x1="308" y1="106" x2="430" y2="62" stroke="var(--primary)" stroke-width="1"/>
+          <text x="436" y="58" font-family="Times New Roman, serif" font-size="13" font-weight="700" fill="var(--primary)">Candle (Thian)</text>
+          <text x="436" y="74" font-family="Times New Roman, serif" font-size="11.5" fill="var(--on-surface-variant)">Enlightenment &amp; Dharma</text>
+
+          <!-- Incense -->
+          <line x1="264" y1="125" x2="165" y2="75" stroke="var(--primary)" stroke-width="1"/>
+          <text x="20" y="68" font-family="Times New Roman, serif" font-size="13" font-weight="700" fill="var(--primary)">3 Incense Sticks (Thoop)</text>
+          <text x="20" y="84" font-family="Times New Roman, serif" font-size="11.5" fill="var(--on-surface-variant)">Triple Gem: Buddha, Dharma, Sangha</text>
+
+          <!-- Flowers -->
+          <line x1="242" y1="184" x2="155" y2="145" stroke="var(--primary)" stroke-width="1"/>
+          <text x="20" y="138" font-family="Times New Roman, serif" font-size="13" font-weight="700" fill="var(--primary)">Marigold &amp; Amaranth</text>
+          <text x="20" y="154" font-family="Times New Roman, serif" font-size="11.5" fill="var(--on-surface-variant)">Prosperity &amp; enduring devotion</text>
+
+          <!-- Coin & Hair/Nails -->
+          <line x1="358" y1="186" x2="438" y2="145" stroke="var(--primary)" stroke-width="1"/>
+          <text x="442" y="138" font-family="Times New Roman, serif" font-size="13" font-weight="700" fill="var(--primary)">Coin &amp; Hair/Nail Clippings</text>
+          <text x="442" y="154" font-family="Times New Roman, serif" font-size="11.5" fill="var(--on-surface-variant)">Generosity &amp; releasing misfortune</text>
+
+          <!-- Banana Trunk & Leaves -->
+          <line x1="205" y1="224" x2="145" y2="215" stroke="var(--primary)" stroke-width="1"/>
+          <text x="20" y="210" font-family="Times New Roman, serif" font-size="13" font-weight="700" fill="var(--primary)">Banana Trunk &amp; Leaves</text>
+          <text x="20" y="226" font-family="Times New Roman, serif" font-size="11.5" fill="var(--on-surface-variant)">Biodegradable organic vessel</text>
+
+          <!-- River / Phra Mae Khongkha -->
+          <line x1="415" y1="252" x2="442" y2="278" stroke="var(--primary)" stroke-width="1"/>
+          <text x="340" y="295" font-family="Times New Roman, serif" font-size="13" font-weight="700" fill="var(--primary)">Phra Mae Khongkha (River)</text>
+          <text x="340" y="310" font-family="Times New Roman, serif" font-size="11.5" fill="var(--on-surface-variant)">Atonement (Kho Khama) &amp; gratitude</text>
+        </svg>
+        <p class="diagram-caption"><strong>Pedagogical Note:</strong> Traditional krathongs fuse Theravada Buddhist veneration (candle and three incense sticks) with Brahmanical-animist river propitiation (apologizing for annual water contamination).</p>
+      </div>
+
+      <!-- Diagram 2: Historical Syncretism & Ecological Trajectory -->
+      <div class="diagram-box">
+        <h3 style="margin: 0; font-size: var(--subhead-size); color: var(--primary);">Figure 2. Syncretic Convergence &amp; Modern Ecological Transition</h3>
+        <svg viewBox="0 0 600 320" role="img" aria-label="Flowchart diagram illustrating how Brahmanical, animist, and Buddhist traditions converged into Loy Krathong and evolved through modern ecological reforms">
+          <rect x="0" y="0" width="600" height="320" fill="var(--background)" stroke="var(--outline-variant)" stroke-width="1"/>
+
+          <!-- Column 1: Roots -->
+          <text x="24" y="28" font-family="Times New Roman, serif" font-size="12" font-weight="700" fill="var(--tertiary)">I. ANTHROPOLOGICAL ROOTS</text>
+          <rect x="24" y="42" width="160" height="58" fill="var(--surface-container-low)" stroke="var(--primary)" stroke-width="1.5"/>
+          <text x="34" y="64" font-family="Times New Roman, serif" font-size="13" font-weight="700" fill="var(--primary)">Animist Agrarian Rites</text>
+          <text x="34" y="82" font-family="Times New Roman, serif" font-size="11" fill="var(--on-surface-variant)">Monsoon harvest &amp; water spirits</text>
+
+          <rect x="24" y="114" width="160" height="58" fill="var(--surface-container-low)" stroke="var(--primary)" stroke-width="1.5"/>
+          <text x="34" y="136" font-family="Times New Roman, serif" font-size="13" font-weight="700" fill="var(--primary)">Brahmanical Influence</text>
+          <text x="34" y="154" font-family="Times New Roman, serif" font-size="11" fill="var(--on-surface-variant)">Ganga (Phra Mae Khongkha)</text>
+
+          <rect x="24" y="186" width="160" height="58" fill="var(--surface-container-low)" stroke="var(--primary)" stroke-width="1.5"/>
+          <text x="34" y="208" font-family="Times New Roman, serif" font-size="13" font-weight="700" fill="var(--primary)">Theravada Buddhism</text>
+          <text x="34" y="226" font-family="Times New Roman, serif" font-size="11" fill="var(--on-surface-variant)">Narmada footprint &amp; light merit</text>
+
+          <!-- Arrows to Center -->
+          <line x1="184" y1="71" x2="225" y2="143" stroke="var(--outline)" stroke-width="2"/>
+          <line x1="184" y1="143" x2="225" y2="143" stroke="var(--outline)" stroke-width="2"/>
+          <line x1="184" y1="215" x2="225" y2="143" stroke="var(--outline)" stroke-width="2"/>
+
+          <!-- Column 2: Historical Synthesis -->
+          <text x="225" y="28" font-family="Times New Roman, serif" font-size="12" font-weight="700" fill="var(--tertiary)">II. ROYAL SYNTHESIS</text>
+          <rect x="225" y="88" width="150" height="110" fill="var(--primary)" stroke="var(--outline)" stroke-width="2"/>
+          <text x="237" y="114" font-family="Times New Roman, serif" font-size="13.5" font-weight="700" fill="var(--on-primary)">Sukhothai Lore vs.</text>
+          <text x="237" y="132" font-family="Times New Roman, serif" font-size="13.5" font-weight="700" fill="var(--on-primary)">Rattanakosin Texts</text>
+          <text x="237" y="156" font-family="Times New Roman, serif" font-size="11" fill="var(--title-lede-text)">12th Lunar Month Full Moon</text>
+          <text x="237" y="174" font-family="Times New Roman, serif" font-size="11" fill="var(--title-lede-text)">(Wan Phen Duean Sip Song)</text>
+
+          <!-- Arrows to Ecological Evolution -->
+          <line x1="375" y1="120" x2="416" y2="85" stroke="var(--outline)" stroke-width="2"/>
+          <line x1="375" y1="160" x2="416" y2="195" stroke="var(--outline)" stroke-width="2"/>
+
+          <!-- Column 3: Modern Shifts -->
+          <text x="416" y="28" font-family="Times New Roman, serif" font-size="12" font-weight="700" fill="var(--tertiary)">III. ECOLOGICAL SHIFT</text>
+          <rect x="416" y="46" width="160" height="78" fill="var(--error-bg)" stroke="var(--error)" stroke-width="1.5"/>
+          <text x="426" y="68" font-family="Times New Roman, serif" font-size="13" font-weight="700" fill="var(--error)">1980s–2000s Crisis</text>
+          <text x="426" y="86" font-family="Times New Roman, serif" font-size="11" fill="var(--on-surface)">Expanded polystyrene (foam)</text>
+          <text x="426" y="102" font-family="Times New Roman, serif" font-size="11" fill="var(--on-surface)">&amp; metal pins harm waterways</text>
+
+          <rect x="416" y="148" width="160" height="96" fill="var(--positive-bg)" stroke="var(--positive)" stroke-width="1.5"/>
+          <text x="426" y="170" font-family="Times New Roman, serif" font-size="13" font-weight="700" fill="var(--positive)">2015–2026 Reform</text>
+          <text x="426" y="188" font-family="Times New Roman, serif" font-size="11" fill="var(--on-surface)">Natural substrates (&gt;90%),</text>
+          <text x="426" y="204" font-family="Times New Roman, serif" font-size="11" fill="var(--on-surface)">ice/digital krathongs, &amp; pond</text>
+          <text x="426" y="220" font-family="Times New Roman, serif" font-size="11" fill="var(--on-surface)">eutrophication awareness</text>
+
+          <!-- Footer note inside diagram -->
+          <rect x="24" y="264" width="552" height="38" fill="var(--surface-container)" stroke="var(--outline-variant)" stroke-width="1"/>
+          <text x="36" y="287" font-family="Times New Roman, serif" font-size="12" fill="var(--on-surface)">Key Paradox: Even biodegradable bread krathongs cause rapid oxygen depletion (eutrophication) in stagnant urban ponds.</text>
+        </svg>
+        <p class="diagram-caption"><strong>Historiographical Insight:</strong> Scholars distinguish popular Sukhothai origin narratives (<em>Nang Noppamas</em>) from textual evidence dated to the early Rattanakosin court.</p>
+      </div>
+    </div>
+
+    <!-- Structured Reference Table: Cultural Lexicon & Regional Variations -->
+    <div class="leaf-panel" style="margin-top: var(--space-lg);">
+      <h3>Table 1. Bilingual Cultural Lexicon &amp; Regional Thai Festival Variations</h3>
+      <div class="table-wrap">
+        <table class="charter-table">
+          <thead>
+            <tr>
+              <th>Thai Term / Tradition</th>
+              <th>Region / Provenance</th>
+              <th>Academic English Gloss (B2–C1)</th>
+              <th>Cultural &amp; Ecological Significance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Wan Phen Duean Sip Song</strong></td>
+              <td>Pan-Thai (Lunar Calendar)</td>
+              <td>Full moon of the 12th lunar month</td>
+              <td>Peak post-monsoon high water level; optimal river current for releasing floating offerings.</td>
+            </tr>
+            <tr>
+              <td><strong>Kho Khama Phra Mae Khongkha</strong></td>
+              <td>Brahmanical–Thai Syncretism</td>
+              <td>Ritual petition for pardon from the River Goddess</td>
+              <td>Expresses remorse for domestic, agricultural, and industrial contamination of waterways.</td>
+            </tr>
+            <tr>
+              <td><strong>Yi Peng (Khom Loi)</strong></td>
+              <td>Northern Thailand (Lanna / Chiang Mai)</td>
+              <td>Second-month Lanna lantern festival</td>
+              <td>Features buoyant hot-air sky lanterns alongside water krathongs; raises aviation and fire-safety regulation issues.</td>
+            </tr>
+            <tr>
+              <td><strong>Loy Krathong Sai</strong></td>
+              <td>Tak Province (Ping River)</td>
+              <td>Luminous floating coconut-shell chain</td>
+              <td>Oil-filled coconut husks (<em>kala</em>) linked in radiant streams; avoids polystyrene foam completely.</td>
+            </tr>
+            <tr>
+              <td><strong>Phao Thian Len Fai</strong></td>
+              <td>Sukhothai Historical Park</td>
+              <td>"Burn candles and play with fire" festival</td>
+              <td>Alludes to King Ramkhamhaeng's 1292 CE stone inscription describing seasonal merit-making illumination.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Bar -->
+  <section aria-label="Question Filter Controls">
+    <div class="filter-strip" role="group" aria-label="Filter assessment items by section">
+      <button type="button" class="filter-btn" data-filter="all" aria-pressed="true" onclick="setQuestionFilter('all', this)">All 35 Questions</button>
+      <button type="button" class="filter-btn" data-filter="part1" aria-pressed="false" onclick="setQuestionFilter('part1', this)">Part I: 25 MCQs</button>
+      <button type="button" class="filter-btn" data-filter="part2" aria-pressed="false" onclick="setQuestionFilter('part2', this)">Part II: 10 IELTS Reading</button>
+      <button type="button" class="filter-btn" data-filter="unanswered" aria-pressed="false" onclick="setQuestionFilter('unanswered', this)">Unanswered Only</button>
+      <button type="button" class="filter-btn" data-filter="review" aria-pressed="false" onclick="setQuestionFilter('review', this)">Needs Review</button>
+    </div>
+  </section>
+
+  <!-- PART I: 25 MULTIPLE-CHOICE QUESTIONS -->
+  <section id="part1-section" aria-labelledby="part1-heading">
+    <div class="section-head">
+      <h2 id="part1-heading">Part I — Multiple-Choice Assessment (Questions 1–25)</h2>
+      <span class="section-kicker">25 Items · 1.0 Point Each · CEFR B2–C1</span>
+    </div>
+    <p style="margin: var(--space-sm) 0 var(--space-md); color: var(--on-surface-variant); max-width: 72ch;">
+      Select the single best response (A, B, C, or D) for each question. You may verify items individually using <em>Check Item</em> or grade the entire assessment at once.
+    </p>
+    <div id="part1-container" class="questions-stack"></div>
+  </section>
+
+  <!-- PART II: 10 IELTS-STYLE ACADEMIC PASSAGE READING QUESTIONS -->
+  <section id="part2-section" aria-labelledby="part2-heading">
+    <div class="section-head">
+      <h2 id="part2-heading">Part II — IELTS-Style Academic Passage Reading (Questions 26–35)</h2>
+      <span class="section-kicker">2 Passages · 10 Open-Ended Items · Automatic Concept &amp; Precision Grader</span>
+    </div>
+    <p style="margin: var(--space-sm) 0 var(--space-md); color: var(--on-surface-variant); max-width: 72ch;">
+      Read each academic passage carefully before completing the open-ended questions beside it. Questions 26–30 require exact lexical precision within strict word limits; Questions 31–35 require concise, evidence-grounded analytical responses (1–2 sentences).
+    </p>
+
+    <!-- Passage 1 + Questions 26-30 -->
+    <div class="passage-layout" id="passage1-block" style="margin-bottom: var(--space-xl);">
+      <article class="passage-card" aria-labelledby="passage1-title">
+        <h3 id="passage1-title">Reading Passage I: Syncretic Origins &amp; the Historiography of Loy Krathong</h3>
+        <div class="passage-meta">Anthropological &amp; Historical Text · CEFR B2–C1 · Approx. 410 words</div>
+        <p class="passage-para"><span class="para-label">[Paragraph A]</span> Every November, on the full moon of the twelfth Thai lunar month, waterways across Thailand become conduits for thousands of illuminated vessels known as <em>krathongs</em>. Far from representing a monolithic religious observance, Loy Krathong exemplifies cultural syncretism—the gradual fusion of pre-Buddhist animist water rites, Indic Brahmanical cosmology, and Theravada Buddhist merit-making. Anthropologists note that across mainland Southeast Asia, agrarian communities historically marked the recession of seasonal monsoon floods with rituals of gratitude and appeasement directed toward aquatic guardian spirits, whose benevolence ensured fertile paddies in the ensuing cycle.</p>
+        <p class="passage-para"><span class="para-label">[Paragraph B]</span> Overlaid upon this indigenous substratum is an unmistakable Brahmanical legacy derived from India’s <em>Dipavali</em> festival of lights and the veneration of the sacred River Ganges. In Thai vernacular practice, this deity is localized as <em>Phra Mae Khongkha</em>—literally "Venerable Mother Ganga." Launching a flower-decked float serves a dual ritual function: offering thanksgiving for life-sustaining water while performing <em>kho khama</em>, an act of symbolic contrition for human contamination of rivers throughout the year. Theravada Buddhist traditions subsequently reframed the ceremony as an act of homage (<em>bucha</em>) to the Buddha’s footprint imprinted along the sandy banks of the Nammada River, as well as to the celestial hair relic enshrined in the <em>Chulamani</em> stupa.</p>
+        <p class="passage-para"><span class="para-label">[Paragraph C]</span> Popular accounts routinely attribute the invention of the lotus-shaped krathong to <em>Nang Noppamas</em>, an erudite consort in the thirteenth-century Sukhothai court who allegedly crafted the first banana-leaf vessel to delight King Ramkhamhaeng. Yet modern Thai historians, echoing skeptical observations first raised by King Mongkut (Rama IV) in the nineteenth century, treat this narrative as a compelling literary anachronism. Philological analysis of the chronicle <em>Tamrab Thao Sri Chulalak</em> reveals allusions to European maritime traders, firearms, and late-Ayutthaya court etiquette—phenomena absent from thirteenth-century Sukhothai. Scholars therefore conclude that the treatise was composed during the early Rattanakosin period (circa 1782–1851), retroactively projecting nineteenth-century royal aesthetics onto Thailand’s revered first capital.</p>
+        <p class="passage-para"><span class="para-label">[Paragraph D]</span> Even the celebrated 1292 CE Ramkhamhaeng Inscription, which vividly portrays Sukhothai’s nocturnal <em>Phao Thian Len Fai</em> ("burn candles and play with fire") festivities, omits any explicit mention of floating banana-leaf boats. Rather than diminishing the festival’s cultural value, recognizing this layered provenance illuminates how Thai national memory continuously reinterprets ancestral customs to cultivate communal cohesion.</p>
+      </article>
+      <div class="questions-stack" id="part2-p1-container"></div>
+    </div>
+
+    <!-- Passage 2 + Questions 31-35 -->
+    <div class="passage-layout" id="passage2-block">
+      <article class="passage-card" aria-labelledby="passage2-title">
+        <h3 id="passage2-title">Reading Passage II: Ecological Transitions &amp; Cross-Cultural Divergences</h3>
+        <div class="passage-meta">Environmental &amp; Sociocultural Analysis · CEFR B2–C1 · Approx. 425 words</div>
+        <p class="passage-para"><span class="para-label">[Paragraph A]</span> For centuries, the ritual act of floating a krathong posed negligible harm to aquatic ecosystems because artisans relied exclusively on perishable botanical materials: buoyant cores sliced from banana pseudostems (<em>ton kluai</em>), intricately folded banana leaves (<em>bai tong</em>), and indigenous blossoms. However, rapid urbanization during the late twentieth century introduced expanded polystyrene—commonly termed foam—as a cheap, waterproof substitute. By the 1990s, municipal sanitation crews in Bangkok were extracting hundreds of thousands of non-biodegradable foam bases, rusted metal pins, and synthetic ribbons from the Chao Phraya River and urban retention canals each November, creating a stark irony: a ceremony meant to beg pardon from the River Goddess had become an acute vector of plastic pollution.</p>
+        <p class="passage-para"><span class="para-label">[Paragraph B]</span> Sustained public-health advocacy and municipal bans in Bangkok’s public parks have since catalyzed a dramatic material shift. Municipal post-festival audits over the past decade consistently report that over 90 percent of collected krathongs now utilize organic substrates such as banana trunks, baked bread, or ice. Nevertheless, environmental scientists warn against uncritical optimism. Bread and fish-food krathongs, while edible in open flowing rivers, dissolve rapidly in stagnant urban ponds. When excessive starch decomposes underwater, microbial respiration consumes dissolved oxygen, triggering severe eutrophication—a hypoxic condition that suffocates ornamental fish and fouls municipal water basins within 48 hours.</p>
+        <p class="passage-para"><span class="para-label">[Paragraph C]</span> Consequently, contemporary sustainability initiatives promote structural moderation alongside material innovation. Civic campaigns increasingly encourage households to share a single family krathong, substitute steel staples with brittle wooden toothpicks, or adopt <em>krathong nam khaeng</em> (molded ice floats) that melt seamlessly without leaving solid residue. Simultaneously, digital platforms allow younger citizens and overseas diaspora communities to launch virtual krathongs online—eliminating physical waste entirely while preserving communal participation through synchronized social-media blessings.</p>
+        <p class="passage-para"><span class="para-label">[Paragraph D]</span> Beyond Bangkok, regional adaptations underscore Thailand’s geographic diversity and cross-cultural appeal. In northern Chiang Mai, Loy Krathong coincides with the Lanna <em>Yi Peng</em> festival, famous for releasing illuminated paper sky lanterns (<em>khom loi</em>), although strict aviation corridors now regulate launch zones. Meanwhile, Tak Province hosts <em>Loy Krathong Sai</em>, where hollowed coconut shells filled with oil drift in luminous chains down the Ping River. Internationally, diaspora communities and Southeast Asian neighbors—such as Myanmar’s <em>Tazaungdaing</em> and Cambodia’s <em>Bon Om Touk</em>—demonstrate how shared monsoon-calendar rituals endure while continuously negotiating modern ecological constraints.</p>
+      </article>
+      <div class="questions-stack" id="part2-p2-container"></div>
+    </div>
+  </section>
+
+  <!-- Source Attribution & Pedagogical Footer -->
+  <footer class="source-footer">
+    <div><strong>Cultural &amp; Pedagogical Sources:</strong> Synthesized for Grade 8 Thai bilingual humanities instruction (CEFR B2–C1) from Thai historical chronicles (<em>Ramkhamhaeng Inscription</em>; <em>Tamrab Thao Sri Chulalak</em> historiography), Bangkok Metropolitan Administration (BMA) post-festival waste audit patterns, and thematic Thai holiday listening materials ("Learn Thai Holidays — Loy Krathong Day").</div>
+    <div><strong>Scoring Engine Note:</strong> Part I (Q1–Q25) evaluates exact single-best-answer selection (1.0 pt each). Part II (Q26–Q35) combines strict IELTS word-limit/lexical verification (Q26–Q30) with weighted multi-concept semantic rubric evaluation (Q31–Q35; 0, 0.5, or 1.0 pt each).</div>
+  </footer>
+
+</main>
+
+<api-shim></api-shim>
+<script>
+// ============================================================================
+// ASSESSMENT DATA: EXACTLY 35 CEFR B2-C1 QUESTIONS
+// Part I: Q1-Q25 (MCQs) | Part II: Q26-Q35 (IELTS Open-Ended Reading)
+// ============================================================================
+
+const QUESTIONS_PART1 = [
+  // Band A: Cultural Terminology & Traditional Craft (Q1-Q5)
+  {
+    id: 1,
+    band: `Band A: Cultural Terminology & Traditional Craft`,
+    domain: `Cultural Terminology`,
+    cefr: `B2`,
+    prompt: `In Thai cultural discourse, what does the verb "loy" (ลอย) in "Loy Krathong" specifically denote, and how does it contrast with the noun "krathong"?`,
+    options: [
+      { key: `A`, text: `To illuminate a temple courtyard; "krathong" refers strictly to beeswax pillars.` },
+      { key: `B`, text: `To float or set adrift upon water; "krathong" designates the buoyant lotus-shaped vessel.` },
+      { key: `C`, text: `To harvest seasonal reeds; "krathong" denotes the monsoon floodgate.` },
+      { key: `D`, text: `To recite Sanskrit mantras; "krathong" translates to a ceremonial brass bowl.` }
+    ],
+    correct: `B`,
+    rationale: `"Loy" means to float or set adrift, while "krathong" denotes the traditional receptacle (historically crafted from banana-leaf folds on a banana-trunk base) designed to carry ritual offerings onto waterways.`
+  },
+  {
+    id: 2,
+    band: `Band A: Cultural Terminology & Traditional Craft`,
+    domain: `Cultural Terminology`,
+    cefr: `B2`,
+    prompt: `Which Thai lunar calendar phrase accurately identifies the annual date on which Loy Krathong is observed?`,
+    options: [
+      { key: `A`, text: `Wan Phen Duean Sip Song — the full moon of the twelfth Thai lunar month.` },
+      { key: `B`, text: `Wan Songkran — the vernal equinox marking the solar New Year in mid-April.` },
+      { key: `C`, text: `Wan Khao Phansa — the first waning moon initiating the three-month monastic rains retreat.` },
+      { key: `D`, text: `Wan Magha Bucha — the third lunar month commemorating the spontaneous assembly of 1,250 monks.` }
+    ],
+    correct: `A`,
+    rationale: `Loy Krathong falls on "Wan Phen Duean Sip Song" (วันเพ็ญเดือนสิบสอง), the full moon night of the 12th lunar month (usually November), when post-monsoon rivers reach their highest, calmest levels.`
+  },
+  {
+    id: 3,
+    band: `Band A: Cultural Terminology & Traditional Craft`,
+    domain: `Cultural Terminology`,
+    cefr: `B2`,
+    prompt: `In traditional krathong craftsmanship, why is the transverse slice of a banana tree trunk ("ton kluai") preferred over denser hardwoods as the structural base?`,
+    options: [
+      { key: `A`, text: `Its fibrous, air-filled cellular matrix provides natural buoyancy while remaining biodegradable and easy to pin.` },
+      { key: `B`, text: `Its sap contains synthetic resin that prevents candles from extinguishing in river rapids.` },
+      { key: `C`, text: `It sinks rapidly after ten minutes, ensuring rivers remain visually unobstructed.` },
+      { key: `D`, text: `It is non-organic and can be retrieved and reused across consecutive decades.` }
+    ],
+    correct: `A`,
+    rationale: `Banana pseudostem slices ("ton kluai") possess porous, air-pocketed tissue that floats effortlessly, accepts folded leaf pins cleanly, and decomposes naturally in water.`
+  },
+  {
+    id: 4,
+    band: `Band A: Cultural Terminology & Traditional Craft`,
+    domain: `Cultural Terminology`,
+    cefr: `C1`,
+    prompt: `How does Tak Province’s "Loy Krathong Sai" visually and materially diverge from standard central Thai krathong practices?`,
+    options: [
+      { key: `A`, text: `Participants float miniature paper airplanes illuminated by LEDs across dry temple plazas.` },
+      { key: `B`, text: `Participants release hollowed coconut shells ("kala") filled with oil in continuous glowing chains along the Ping River.` },
+      { key: `C`, text: `Monks submerge ceramic urns containing river silt at the center of Bangkok’s Chao Phraya.` },
+      { key: `D`, text: `Villagers launch helium-inflated silk balloons rather than aquatic floats.` }
+    ],
+    correct: `B`,
+    rationale: `Tak’s "Loy Krathong Sai" uses dried coconut-shell halves ("kala") lit with oil-soaked wicks, forming shimmering streams ("sai") along the Ping River without banana trunks or foam.`
+  },
+  {
+    id: 5,
+    band: `Band A: Cultural Terminology & Traditional Craft`,
+    domain: `Cultural Terminology`,
+    cefr: `B2`,
+    prompt: `In northern Thailand (Lanna), Loy Krathong coincides with "Yi Peng." What distinguishes "khom loi" from a standard krathong?`,
+    options: [
+      { key: `A`, text: `Khom loi are buoyant rice-paper hot-air lanterns released into the night sky rather than onto rivers.` },
+      { key: `B`, text: `Khom loi are woven bamboo fish traps placed beneath wooden bridges.` },
+      { key: `C`, text: `Khom loi are ceremonial silk banners hung exclusively inside royal palaces.` },
+      { key: `D`, text: `Khom loi are sculpted wax statues floated only during solar eclipses.` }
+    ],
+    correct: `A`,
+    rationale: `During Lanna’s Yi Peng ("second lunar month" in the northern calendar), participants release "khom loi" (hot-air sky lanterns) upward to pay homage to celestial Buddhist relics, complementing aquatic krathongs.`
+  },
+
+  // Band B: Historical Origins & Sukhothai Historiography (Q6-Q10)
+  {
+    id: 6,
+    band: `Band B: Historical Origins & Sukhothai Historiography`,
+    domain: `Historical Origins`,
+    cefr: `B2`,
+    prompt: `According to popular Thai historical lore, which thirteenth-century figure is credited with crafting the first lotus-shaped krathong?`,
+    options: [
+      { key: `A`, text: `Queen Suriyothai of Ayutthaya` },
+      { key: `B`, text: `Nang Noppamas (Thao Sri Chulalak) of the Sukhothai court` },
+      { key: `C`, text: `Princess Chamathewi of Hariphunchai` },
+      { key: `D`, text: `King Naresuan the Great of Phitsanulok` }
+    ],
+    correct: `B`,
+    rationale: `Popular tradition attributes the lotus-blossom krathong to Nang Noppamas, a consort featured in the chronicle "Tamrab Thao Sri Chulalak" set at the Sukhothai court.`
+  },
+  {
+    id: 7,
+    band: `Band B: Historical Origins & Sukhothai Historiography`,
+    domain: `Historical Origins`,
+    cefr: `C1`,
+    prompt: `Why do modern Thai historians classify the "Tamrab Thao Sri Chulalak" account of Nang Noppamas as an anachronistic Rattanakosin composition rather than a genuine Sukhothai primary source?`,
+    options: [
+      { key: `A`, text: `It was written exclusively in Latin missionary script on European parchment.` },
+      { key: `B`, text: `It contains linguistic and material references—such as European traders and firearms—that postdate the Sukhothai era by centuries.` },
+      { key: `C`, text: `It explicitly denies the existence of rivers in northern and central Thailand.` },
+      { key: `D`, text: `Archaeological excavations proved that banana plants were unknown in Southeast Asia before 1900.` }
+    ],
+    correct: `B`,
+    rationale: `Philological critique—initiated by King Rama IV and expanded by modern historians—shows the text mentions Westerners, muskets, and Bangkok-era court customs absent in 13th-century Sukhothai.`
+  },
+  {
+    id: 8,
+    band: `Band B: Historical Origins & Sukhothai Historiography`,
+    domain: `Historical Origins`,
+    cefr: `B2`,
+    prompt: `What festival phrase recorded on King Ramkhamhaeng’s 1292 CE Stone Inscription (Inscription No. 1) is frequently cited as an ancestral precursor to modern Sukhothai Loy Krathong celebrations?`,
+    options: [
+      { key: `A`, text: `Phao Thian Len Fai ("burning candles and playing with fire")` },
+      { key: `B`, text: `Raek Na Khwan ("the royal ploughing ceremony")` },
+      { key: `C`, text: `Boon Bang Fai ("the northeastern bamboo rocket festival")` },
+      { key: `D`, text: `Tak Bat Devo ("offering alms upon the Buddha’s descent")` }
+    ],
+    correct: `A`,
+    rationale: `Inscription No. 1 describes the Sukhothai populace celebrating "Phao Thian Len Fai" with dazzling nocturnal lamps and festivities, though it does not explicitly mention floating krathongs.`
+  },
+  {
+    id: 9,
+    band: `Band B: Historical Origins & Sukhothai Historiography`,
+    domain: `Historical Origins`,
+    cefr: `C1`,
+    prompt: `Before the formalization of courtly krathong traditions, what practical agrarian function did post-monsoon water rituals serve across mainland Southeast Asia?`,
+    options: [
+      { key: `A`, text: `They marked the end of rainy-season flooding, offering gratitude to water spirits as agricultural communities transitioned toward harvest.` },
+      { key: `B`, text: `They were military drills designed to test naval buoyancy prior to maritime invasions.` },
+      { key: `C`, text: `They measured annual river salinity for royal salt-taxation ledgers.` },
+      { key: `D`, text: `They signaled the start of mandatory canal drainage during summer droughts.` }
+    ],
+    correct: `A`,
+    rationale: `Anthropologists trace Loy Krathong’s earliest layer to animist agrarian societies thanking water deities as monsoon floods receded and rice cultivation reached maturity.`
+  },
+  {
+    id: 10,
+    band: `Band B: Historical Origins & Sukhothai Historiography`,
+    domain: `Historical Origins`,
+    cefr: `B2`,
+    prompt: `Which nineteenth-century Thai monarch critically examined the Nang Noppamas manuscript and observed that earlier royal festivals were primarily Brahmanical lantern rites ("Chong Pariang")?`,
+    options: [
+      { key: `A`, text: `King Ramkhamhaeng (Sukhothai)` },
+      { key: `B`, text: `King Mongkut / Rama IV (Rattanakosin)` },
+      { key: `C`, text: `King Narai (Ayutthaya)` },
+      { key: `D`, text: `King Taksin (Thonburi)` }
+    ],
+    correct: `B`,
+    rationale: `King Mongkut (Rama IV) noted in his royal essays on the twelve-month ceremonies that "Loy Krathong" was not originally a pure Buddhist ritual but evolved from Brahmanical lantern offerings ("Chong Pariang") later reinterpreted in a Buddhist frame.`
+  },
+
+  // Band C: Buddhist & Brahmanical Syncretic Symbolism (Q11-Q15)
+  {
+    id: 11,
+    band: `Band C: Buddhist & Brahmanical Symbolism`,
+    domain: `Religious Symbolism`,
+    cefr: `B2`,
+    prompt: `In Thai Buddhist-Brahmanical syncretism, who is "Phra Mae Khongkha," and what cultural etymology explains her name?`,
+    options: [
+      { key: `A`, text: `The Goddess of the Rice Harvest, derived from a Khmer word for paddy soil.` },
+      { key: `B`, text: `The Goddess of Water, whose title "Khongkha" derives from the Sanskrit name for India’s sacred River Ganges (Ganga).` },
+      { key: `C`, text: `A celestial queen of winds whose name comes from Pali terms for cloud formation.` },
+      { key: `D`, text: `A historical Sukhothai princess deified for constructing irrigation dams.` }
+    ],
+    correct: `B`,
+    rationale: `"Phra Mae Khongkha" adapts the Indic reverence for Mother Ganga (Sanskrit: Ganga -> Thai: Khongkha) into a universal Thai personification of life-giving rivers and waterways.`
+  },
+  {
+    id: 12,
+    band: `Band C: Buddhist & Brahmanical Symbolism`,
+    domain: `Religious Symbolism`,
+    cefr: `B2`,
+    prompt: `What moral attitude does the ritual phrase "Kho Khama" (ขอขมา) express when a participant releases a krathong onto the river?`,
+    options: [
+      { key: `A`, text: `Demanding material wealth from river spirits in exchange for floral tributes.` },
+      { key: `B`, text: `Humbly asking forgiveness from the Water Goddess for polluting, exploiting, or disrespecting waterways throughout the year.` },
+      { key: `C`, text: `Declaring victory over seasonal floods at the end of the monsoon.` },
+      { key: `D`, text: `Transferring ancestral debts onto neighboring downstream villages.` }
+    ],
+    correct: `B`,
+    rationale: `"Kho Khama" means seeking pardon or atonement; participants acknowledge human reliance on water while apologizing for everyday waste and contamination.`
+  },
+  {
+    id: 13,
+    band: `Band C: Buddhist & Brahmanical Symbolism`,
+    domain: `Religious Symbolism`,
+    cefr: `B2`,
+    prompt: `Within a traditional krathong, what do the single candle ("thian") and the three incense sticks ("thoop") respectively symbolize in Theravada Buddhist iconography?`,
+    options: [
+      { key: `A`, text: `The candle represents royal authority; the incense represents the three seasons of Thailand.` },
+      { key: `B`, text: `The candle symbolizes the light of wisdom and the Dharma; the three incense sticks honor the Triple Gem (Buddha, Dharma, Sangha).` },
+      { key: `C`, text: `The candle wards off aquatic predators; the incense repels mosquitoes along riverbanks.` },
+      { key: `D`, text: `The candle marks the full moon’s phase; the incense counts three generations of ancestors.` }
+    ],
+    correct: `B`,
+    rationale: `In Buddhist merit-making, light signifies spiritual enlightenment (the Dharma dispelling ignorance), while three incense sticks universally pay homage to the Triple Gem.`
+  },
+  {
+    id: 14,
+    band: `Band C: Buddhist & Brahmanical Symbolism`,
+    domain: `Religious Symbolism`,
+    cefr: `C1`,
+    prompt: `According to Buddhist commentary integrated into Thai festival lore, which sacred site is venerated by floating lights down a river?`,
+    options: [
+      { key: `A`, text: `The Buddha’s sacred footprint imprinted along the sandy banks of the Nammada (Narmada) River.` },
+      { key: `B`, text: `The submerged palace of King Asoka beneath the Mekong delta.` },
+      { key: `C`, text: `A sunken stone pillar erected in the Gulf of Thailand during the Dvaravati period.` },
+      { key: `D`, text: `The monastic library of Wat Pho relocated during seasonal floods.` }
+    ],
+    correct: `A`,
+    rationale: `Buddhist tradition links Loy Krathong to venerating the Buddha’s footprint left for the Naga king along the Nammada (Narmada) River, as well as the Chulamani stupa in Tavatimsa heaven.`
+  },
+  {
+    id: 15,
+    band: `Band C: Buddhist & Brahmanical Symbolism`,
+    domain: `Religious Symbolism`,
+    cefr: `B2`,
+    prompt: `Why do some participants traditionally place a small lock of hair, fingernail clippings, or a coin inside their krathong before setting it afloat?`,
+    options: [
+      { key: `A`, text: `To weigh the krathong down so municipal collectors can locate it easily.` },
+      { key: `B`, text: `Hair and nails symbolize letting go of personal misfortune, negativity, and past transgressions, while the coin signifies generosity and merit.` },
+      { key: `C`, text: `To fulfill an ancient municipal tax requirement on riverfront commerce.` },
+      { key: `D`, text: `To test whether the river current flows fast enough for winter navigation.` }
+    ],
+    correct: `B`,
+    rationale: `Releasing small personal remnants (hair/nails) enacts symbolic purification—letting sorrow and bad luck drift away—while offering a coin represents "dana" (charitable generosity).`
+  },
+
+  // Band D: Ecological Perspectives & Sustainable Shifts (Q16-Q20)
+  {
+    id: 16,
+    band: `Band D: Ecological Perspectives & Sustainable Shifts`,
+    domain: `Ecological Perspectives`,
+    cefr: `B2`,
+    prompt: `Why is the late twentieth-century adoption of expanded polystyrene (Styrofoam) krathongs widely criticized as an environmental paradox?`,
+    options: [
+      { key: `A`, text: `Polystyrene sinks immediately and damages submerged hydroelectric turbines.` },
+      { key: `B`, text: `A ritual intended to apologize for polluting rivers instead introduced persistent, non-biodegradable microplastics and toxic leachate into waterways.` },
+      { key: `C`, text: `Foam krathongs decompose too rapidly, turning river water acidic within hours.` },
+      { key: `D`, text: `Polystyrene absorbs candle wax and prevents traditional flowers from blooming.` }
+    ],
+    correct: `B`,
+    rationale: `Styrofoam contradicts the core ethic of "Kho Khama" (asking the river’s forgiveness), persisting for centuries as fragmented plastic debris in rivers and marine estuaries.`
+  },
+  {
+    id: 17,
+    band: `Band D: Ecological Perspectives & Sustainable Shifts`,
+    domain: `Ecological Perspectives`,
+    cefr: `C1`,
+    prompt: `Environmental scientists caution that bread krathongs ("krathong khanom pang") can harm stagnant urban ponds. Which ecological mechanism explains this unintended consequence?`,
+    options: [
+      { key: `A`, text: `Rapid starch decomposition triggers microbial oxygen depletion (eutrophication/hypoxia), suffocating aquatic life.` },
+      { key: `B`, text: `Baked flour permanently turns pond water alkaline and crystallizes riverbed silt.` },
+      { key: `C`, text: `Bread floats indefinitely without absorbing moisture, blocking sunlight for decades.` },
+      { key: `D`, text: `Fish consume the bread and immediately migrate upstream into coastal saltwater.` }
+    ],
+    correct: `A`,
+    rationale: `In closed or low-flow park ponds, excess decaying bread fuels bacterial blooms that strip dissolved oxygen from water (eutrophication/hypoxia), causing fish kills.`
+  },
+  {
+    id: 18,
+    band: `Band D: Ecological Perspectives & Sustainable Shifts`,
+    domain: `Ecological Perspectives`,
+    cefr: `B2`,
+    prompt: `Which fastener swap represents a practical waste-reduction reform when constructing a traditional banana-leaf krathong?`,
+    options: [
+      { key: `A`, text: `Replacing natural wooden toothpicks or bamboo splinters with galvanized steel nails.` },
+      { key: `B`, text: `Replacing metal pins and steel staples with biodegradable wooden toothpicks or bamboo skewers.` },
+      { key: `C`, text: `Sealing banana leaves together with industrial waterproof epoxy.` },
+      { key: `D`, text: `Binding floral garlands with nylon fishing line.` }
+    ],
+    correct: `B`,
+    rationale: `Metal pins and staples injure sanitation workers and linger in river sediment even after banana leaves decay; bamboo skewers or wooden toothpicks eliminate metallic hazards.`
+  },
+  {
+    id: 19,
+    band: `Band D: Ecological Perspectives & Sustainable Shifts`,
+    domain: `Ecological Perspectives`,
+    cefr: `C1`,
+    prompt: `What distinct ecological advantage does an ice krathong ("krathong nam khaeng") or a shared family krathong offer over individual organic floats in densely populated cities?`,
+    options: [
+      { key: `A`, text: `Ice krathongs melt into pure water leaving zero solid organic load, while sharing reduces total post-festival biomass volume.` },
+      { key: `B`, text: `Ice krathongs freeze river currents overnight, halting urban flooding.` },
+      { key: `C`, text: `Shared family krathongs use synthetic polymers that municipal recyclers resell for profit.` },
+      { key: `D`, text: `Ice krathongs neutralize industrial heavy metals dissolved in urban canals.` }
+    ],
+    correct: `A`,
+    rationale: `Even biodegradable plant matter becomes a massive solid-waste burden when hundreds of thousands of floats enter one city’s canals simultaneously; ice leaves no solid residue, and "one family, one krathong" curbs total volume.`
+  },
+  {
+    id: 20,
+    band: `Band D: Ecological Perspectives & Sustainable Shifts`,
+    domain: `Ecological Perspectives`,
+    cefr: `B2`,
+    prompt: `How do digital or virtual krathong platforms balance cultural continuity with contemporary environmental ethics?`,
+    options: [
+      { key: `A`, text: `They eliminate physical waterway waste entirely while preserving communal participation, ritual reflection, and shared blessings.` },
+      { key: `B`, text: `They legally replace all in-person temple ceremonies across rural Thai provinces.` },
+      { key: `C`, text: `They automatically dispatch drones to drop flower petals into the Chao Phraya.` },
+      { key: `D`, text: `They require participants to burn incense indoors without water symbolism.` }
+    ],
+    correct: `A`,
+    rationale: `Online krathongs allow users—including busy urbanites and Thai diaspora communities—to customize vessels, write intentions, and share blessings with zero physical litter.`
+  },
+
+  // Band E: B2-C1 Nuanced Linguistic & Pragmatic Comprehension (Q21-Q25)
+  {
+    id: 21,
+    band: `Band E: B2–C1 Nuanced Linguistic & Pragmatic Comprehension`,
+    domain: `Linguistic Comprehension`,
+    cefr: `C1`,
+    prompt: `Read the sentence: "Notwithstanding its romanticized attribution to Sukhothai, Loy Krathong’s textual record owes much to early Rattanakosin historiography." Which paraphrase most accurately preserves the logical relationship of "Notwithstanding"?`,
+    options: [
+      { key: `A`, text: `Because it is romantically linked to Sukhothai, its texts were written exclusively in Sukhothai.` },
+      { key: `B`, text: `Despite its popular romantic association with Sukhothai, surviving written records stem largely from early Bangkok-era scholarship.` },
+      { key: `C`, text: `Until Sukhothai lore disappears, Rattanakosin chronicles cannot be translated into English.` },
+      { key: `D`, text: `Consequently, Sukhothai inscriptions disproved every festival tradition practiced in Bangkok.` }
+    ],
+    correct: `B`,
+    rationale: `"Notwithstanding" functions as a formal concessive preposition meaning "in spite of" or "despite," contrasting popular romantic attribution against actual textual dating.`
+  },
+  {
+    id: 22,
+    band: `Band E: B2–C1 Nuanced Linguistic & Pragmatic Comprehension`,
+    domain: `Linguistic Comprehension`,
+    cefr: `B2`,
+    prompt: `In an academic essay on Thai heritage, what is the precise meaning of describing Loy Krathong as an "ephemeral" art form?`,
+    options: [
+      { key: `A`, text: `It is strictly forbidden outside royal palace precincts.` },
+      { key: `B`, text: `It is crafted for a brief, transitory existence—meant to dissolve or drift away rather than endure as a permanent monument.` },
+      { key: `C`, text: `It relies entirely on imported stone and bronze metallurgy.` },
+      { key: `D`, text: `It is performed only once every twelve years.` }
+    ],
+    correct: `B`,
+    rationale: `"Ephemeral" describes something intentionally short-lived or transitory; a krathong takes hours to fold yet is released to float away and decompose, mirroring Buddhist impermanence.`
+  },
+  {
+    id: 23,
+    band: `Band E: B2–C1 Nuanced Linguistic & Pragmatic Comprehension`,
+    domain: `Linguistic Comprehension`,
+    cefr: `C1`,
+    prompt: `Which sentence demonstrates the most appropriate formal academic register for a Grade 8 bilingual humanities research paper?`,
+    options: [
+      { key: `A`, text: `People totally stopped using foam krathongs because it was super bad for fish and stuff.` },
+      { key: `B`, text: `The municipal transition toward organic substrates has substantially curtailed polystyrene pollution, albeit without eliminating eutrophication risks in stagnant basins.` },
+      { key: `C`, text: `Loy Krathong is way prettier in Chiang Mai than in Bangkok, and everyone knows it’s an awesome party.` },
+      { key: `D`, text: `Honestly, historians think Nang Noppamas was basically made up by writers in Bangkok later on.` }
+    ],
+    correct: `B`,
+    rationale: `Option B employs precise nominalizations ("municipal transition," "organic substrates"), formal academic verbs ("curtailed"), and accurate concessive hedging ("albeit without eliminating").`
+  },
+  {
+    id: 24,
+    band: `Band E: B2–C1 Nuanced Linguistic & Pragmatic Comprehension`,
+    domain: `Linguistic Comprehension`,
+    cefr: `B2`,
+    prompt: `In the phrase "ritual contrition for anthropogenic river degradation," what does "anthropogenic" specifically modify?`,
+    options: [
+      { key: `A`, text: `Natural monsoon flooding caused by Pacific weather patterns.` },
+      { key: `B`, text: `Environmental degradation originating from human activity.` },
+      { key: `C`, text: `Ancient mythological narratives preserved on stone tablets.` },
+      { key: `D`, text: `Botanical pollination occurring along tropical riverbanks.` }
+    ],
+    correct: `B`,
+    rationale: `"Anthropogenic" (Greek: anthropos = human, genic = produced by) means human-induced, aligning precisely with the ethic of apologizing for human water pollution.`
+  },
+  {
+    id: 25,
+    band: `Band E: B2–C1 Nuanced Linguistic & Pragmatic Comprehension`,
+    domain: `Linguistic Comprehension`,
+    cefr: `C1`,
+    prompt: `An author writes: "Rather than invalidating the festival, recognizing its hybrid provenance underscores Thailand’s capacity for adaptive cultural resilience." What is the author’s rhetorical stance?`,
+    options: [
+      { key: `A`, text: `Dismissive—arguing that modern celebrations are inauthentic and ought to be discontinued.` },
+      { key: `B`, text: `Appreciative and analytical—affirming that mixed historical origins enrich rather than weaken living heritage.` },
+      { key: `C`, text: `Alarmist—warning that foreign traditions have completely erased indigenous Thai customs.` },
+      { key: `D`, text: `Indifferent—claiming historical scholarship has no bearing on cultural identity.` }
+    ],
+    correct: `B`,
+    rationale: `The contrast structure ("Rather than invalidating... underscores... adaptive cultural resilience") signals an appreciative, nuanced scholarly endorsement of cultural synthesis.`
+  }
+];
+
+// ============================================================================
+// PART II: 10 IELTS-STYLE ACADEMIC PASSAGE READING QUESTIONS (Q26-Q35)
+// Q26-Q30 based on Passage I | Q31-Q35 based on Passage II
+// ============================================================================
+
+const QUESTIONS_PART2 = [
+  // Passage I Questions (Q26-Q30) - Short Answer & IELTS Precision Tasks
+  {
+    id: 26,
+    passage: 1,
+    domain: `IELTS Reading: Passage I`,
+    taskType: `Short Answer (NO MORE THAN THREE WORDS)`,
+    maxWords: 3,
+    prompt: `According to Paragraph A, what term describes the gradual blending of animist water rites, Brahmanical cosmology, and Theravada Buddhist merit-making? (Write NO MORE THAN THREE WORDS.)`,
+    placeholder: `e.g., cultural ...`,
+    exactPatterns: [`cultural syncretism`, `syncretism`],
+    modelAnswer: `cultural syncretism`,
+    rationale: `Paragraph A explicitly defines Loy Krathong as an example of "cultural syncretism"—the gradual fusion of indigenous animism, Indic Brahmanical traditions, and Theravada Buddhism.`
+  },
+  {
+    id: 27,
+    passage: 1,
+    domain: `IELTS Reading: Passage I`,
+    taskType: `Short Answer (NO MORE THAN THREE WORDS)`,
+    maxWords: 3,
+    prompt: `From which Indian festival of lights does Paragraph B trace a significant Brahmanical influence on Thai illuminated water rituals? (Write NO MORE THAN THREE WORDS.)`,
+    placeholder: `Name of Indian festival`,
+    exactPatterns: [`dipavali`, `diwali`, `indias dipavali`, `india s dipavali`],
+    modelAnswer: `Dipavali`,
+    rationale: `Paragraph B notes an unmistakable Brahmanical legacy derived from India’s "Dipavali" festival of lights alongside veneration of the sacred River Ganges.`
+  },
+  {
+    id: 28,
+    passage: 1,
+    domain: `IELTS Reading: Passage I`,
+    taskType: `Short Answer (NO MORE THAN THREE WORDS)`,
+    maxWords: 3,
+    prompt: `In Paragraph B, along the sandy banks of which river is the Buddha’s sacred footprint said to have been imprinted? (Write NO MORE THAN THREE WORDS.)`,
+    placeholder: `Name of river`,
+    exactPatterns: [`nammada river`, `the nammada river`, `nammada`, `narmada`, `narmada river`],
+    modelAnswer: `Nammada River`,
+    rationale: `Paragraph B specifies that Theravada Buddhist tradition reframed the ceremony as homage ("bucha") to the Buddha’s footprint imprinted along the sandy banks of the "Nammada River."`
+  },
+  {
+    id: 29,
+    passage: 1,
+    domain: `IELTS Reading: Passage I`,
+    taskType: `Sentence Completion (NO MORE THAN THREE WORDS)`,
+    maxWords: 3,
+    prompt: `Complete the statement based on Paragraph C: Because the "Tamrab Thao Sri Chulalak" chronicle mentions European maritime traders and __________, historians treat its Sukhothai setting as a literary anachronism. (Write NO MORE THAN THREE WORDS.)`,
+    placeholder: `One or two words from text`,
+    exactPatterns: [`firearms`, `court etiquette`, `late ayutthaya etiquette`],
+    modelAnswer: `firearms`,
+    rationale: `Paragraph C cites allusions to "European maritime traders, firearms, and late-Ayutthaya court etiquette" as anachronistic markers demonstrating early Rattanakosin authorship.`
+  },
+  {
+    id: 30,
+    passage: 1,
+    domain: `IELTS Reading: Passage I`,
+    taskType: `Analytical Open-Ended Response (1–2 sentences)`,
+    maxWords: 60,
+    prompt: `Explain why the 1292 CE Ramkhamhaeng Inscription (Paragraph D) does NOT provide conclusive proof that banana-leaf krathongs were floated in thirteenth-century Sukhothai.`,
+    placeholder: `Synthesize evidence from Paragraph D in 1–2 academic sentences...`,
+    rubricConcepts: [
+      {
+        label: `Identifies "Phao Thian Len Fai" / candle-and-fire illumination`,
+        weight: 0.4,
+        keywords: [`phao thian`, `candle`, `candles`, `fire`, `light`, `illumination`, `festivities`]
+      },
+      {
+        label: `Notes the omission / absence of explicit floating banana-leaf boats or krathongs`,
+        weight: 0.6,
+        keywords: [`omit`, `omits`, `does not mention`, `no mention`, `never mentions`, `absent`, `without mentioning`, `lacks`, `missing`, `floating`, `boat`, `krathong`]
+      }
+    ],
+    modelAnswer: `Although the 1292 CE Ramkhamhaeng Inscription vividly describes Sukhothai’s nocturnal "Phao Thian Len Fai" (candle-and-fire) celebrations, it omits any explicit mention of floating banana-leaf boats or krathongs on water.`,
+    rationale: `IELTS inference requires distinguishing documented nocturnal light festivals ("Phao Thian Len Fai") from unrecorded water-vessel practices; omission in the primary inscription prevents definitive 13th-century attribution.`
+  },
+
+  // Passage II Questions (Q31-Q35) - Environmental & Cross-Cultural Analytical Open-Ended Tasks
+  {
+    id: 31,
+    passage: 2,
+    domain: `IELTS Reading: Passage II`,
+    taskType: `Short Answer (NO MORE THAN THREE WORDS)`,
+    maxWords: 3,
+    prompt: `According to Paragraph A, what inexpensive synthetic material introduced in the late twentieth century turned the river-apology ritual into a source of plastic pollution? (Write NO MORE THAN THREE WORDS.)`,
+    placeholder: `Material name`,
+    exactPatterns: [`expanded polystyrene`, `polystyrene`, `foam`, `styrofoam`],
+    modelAnswer: `expanded polystyrene`,
+    rationale: `Paragraph A identifies "expanded polystyrene—commonly termed foam"—along with rusted pins and synthetic ribbons as the pollutant that created an ecological irony.`
+  },
+  {
+    id: 32,
+    passage: 2,
+    domain: `IELTS Reading: Passage II`,
+    taskType: `Analytical Open-Ended Response (1–2 sentences)`,
+    maxWords: 65,
+    prompt: `Using Paragraph B, explain the ecological paradox associated with bread krathongs in urban parks despite their high biodegradability.`,
+    placeholder: `Explain how starch decomposition affects dissolved oxygen and fish...`,
+    rubricConcepts: [
+      {
+        label: `Identifies stagnant / low-flow urban ponds as the vulnerable setting`,
+        weight: 0.25,
+        keywords: [`stagnant`, `pond`, `ponds`, `urban`, `closed`, `still`, `basin`]
+      },
+      {
+        label: `Explains microbial/bacterial decomposition consuming dissolved oxygen (hypoxia / eutrophication)`,
+        weight: 0.5,
+        keywords: [`oxygen`, `eutrophication`, `hypoxic`, `hypoxia`, `microbial`, `decompose`, `dissolve`, `starch`]
+      },
+      {
+        label: `States biological harm (suffocates fish / fouls water)`,
+        weight: 0.25,
+        keywords: [`fish`, `suffocate`, `suffocates`, `foul`, `fouls`, `aquatic`, `kill`]
+      }
+    ],
+    modelAnswer: `Although bread krathongs are edible in flowing rivers, their rapid starch decomposition in stagnant urban ponds fuels microbial respiration that strips dissolved oxygen from the water, triggering eutrophication and suffocating fish within 48 hours.`,
+    rationale: `Full marks require linking the stagnant pond setting to oxygen depletion (eutrophication/hypoxia) and resulting harm to aquatic life.`
+  },
+  {
+    id: 33,
+    passage: 2,
+    domain: `IELTS Reading: Passage II`,
+    taskType: `Analytical Open-Ended Response (1–2 sentences)`,
+    maxWords: 60,
+    prompt: `Identify TWO concrete waste-mitigation strategies promoted in Paragraph C to reduce solid organic and metallic residue during Loy Krathong.`,
+    placeholder: `List and briefly explain two strategies from Paragraph C...`,
+    rubricConcepts: [
+      {
+        label: `Strategy 1: Sharing one krathong per family / household moderation`,
+        weight: 0.35,
+        keywords: [`share`, `sharing`, `single family`, `one krathong`, `household`, `moderation`]
+      },
+      {
+        label: `Strategy 2: Replacing steel staples/pins with wooden toothpicks OR using ice krathongs (nam khaeng)`,
+        weight: 0.35,
+        keywords: [`toothpick`, `toothpicks`, `wooden`, `staples`, `ice`, `nam khaeng`, `melt`]
+      },
+      {
+        label: `Strategy 3 (alternative): Launching virtual / online digital krathongs`,
+        weight: 0.3,
+        keywords: [`digital`, `virtual`, `online`, `platform`, `social`]
+      }
+    ],
+    modelAnswer: `Civic campaigns encourage households to share a single family krathong to cut total waste volume, replace metal staples with brittle wooden toothpicks, or float molded ice krathongs (and online virtual krathongs) that leave no solid residue.`,
+    rationale: `Paragraph C outlines four specific interventions: family sharing, wooden toothpicks instead of staples, melting ice krathongs, and virtual online krathongs. Mentioning any two clearly earns full credit.`
+  },
+  {
+    id: 34,
+    passage: 2,
+    domain: `IELTS Reading: Passage II`,
+    taskType: `Analytical Open-Ended Response (1–2 sentences)`,
+    maxWords: 60,
+    prompt: `Contrast the primary festival medium in Chiang Mai’s Yi Peng with that of Tak’s Loy Krathong Sai, noting one regulatory concern mentioned in Paragraph D.`,
+    placeholder: `Contrast sky lanterns vs. coconut shells and mention safety regulation...`,
+    rubricConcepts: [
+      {
+        label: `Chiang Mai / Yi Peng: paper sky lanterns (khom loi)`,
+        weight: 0.35,
+        keywords: [`sky lantern`, `lanterns`, `khom loi`, `paper`, `chiang mai`, `yi peng`]
+      },
+      {
+        label: `Tak / Loy Krathong Sai: oil-filled hollowed coconut shells along the Ping River`,
+        weight: 0.35,
+        keywords: [`coconut`, `shell`, `shells`, `ping river`, `tak`, `chains`, `oil`]
+      },
+      {
+        label: `Notes aviation corridor regulation / launch-zone restrictions`,
+        weight: 0.3,
+        keywords: [`aviation`, `air`, `flight`, `regulate`, `regulation`, `corridor`, `zone`, `zones`]
+      }
+    ],
+    modelAnswer: `Whereas Chiang Mai’s Yi Peng features paper hot-air sky lanterns (khom loi) that are now tightly regulated near aviation corridors, Tak’s Loy Krathong Sai releases hollowed, oil-filled coconut shells in glowing chains down the Ping River.`,
+    rationale: `Paragraph D contrasts airborne northern sky lanterns (regulated for aviation safety) with Tak’s aquatic coconut-shell chains.`
+  },
+  {
+    id: 35,
+    passage: 2,
+    domain: `IELTS Reading: Passage II`,
+    taskType: `Synthesis & Authorial Perspective (1–2 sentences)`,
+    maxWords: 65,
+    prompt: `Synthesizing Passage II as a whole, how does the author characterize the relationship between Southeast Asian monsoon heritage and contemporary environmental constraints?`,
+    placeholder: `Summarize the author's overarching thesis in 1–2 sentences...`,
+    rubricConcepts: [
+      {
+        label: `Notes enduring cultural vitality / shared regional heritage across Thailand and neighbors`,
+        weight: 0.5,
+        keywords: [`endure`, `preserve`, `heritage`, `tradition`, `ritual`, `myanmar`, `cambodia`, `continuity`, `adapt`, `evolving`]
+      },
+      {
+        label: `Notes ongoing negotiation / adaptation to ecological constraints and sustainability`,
+        weight: 0.5,
+        keywords: [`ecolog`, `sustainab`, `environment`, `constraint`, `waste`, `pollution`, `negotiating`, `reform`, `modern`]
+      }
+    ],
+    modelAnswer: `The author portrays Loy Krathong and parallel regional monsoon rituals (such as Tazaungdaing and Bon Om Touk) as resilient cultural traditions that continue to endure precisely because communities actively adapt their materials and practices to meet modern ecological constraints.`,
+    rationale: `A C1 synthesis captures both halves of the concluding claim (Paragraph D): cultural endurance across Southeast Asia paired with ongoing ecological negotiation and material adaptation.`
+  }
+];
+
+// ============================================================================
+// APPLICATION STATE
+// ============================================================================
+
+const ALL_QUESTION_IDS = [
+  ...QUESTIONS_PART1.map((q) => q.id),
+  ...QUESTIONS_PART2.map((q) => q.id)
+];
+
+let appState = {
+  studentName: ``,
+  studentId: ``,
+  mcqAnswers: {},       // { "1": "B", ... }
+  openAnswers: {},      // { "26": "cultural syncretism", ... }
+  checkedItems: {},     // { "1": true, ... }
+  gradedAll: false,
+  activeFilter: `all`,
+  showReferences: true
+};
+
+// ============================================================================
+// GRADING & NORMALIZATION ENGINE
+// ============================================================================
+
+function normalizeText(str) {
+  return String(str || ``)
+    .toLowerCase()
+    .replace(/['’`"]/g, ` `)
+    .replace(/[^a-z0-9\s-]/g, ` `)
+    .replace(/\s+/g, ` `)
+    .trim();
+}
+
+function countWords(str) {
+  const trimmed = String(str || ``).trim();
+  if (!trimmed) return 0;
+  return trimmed.split(/\s+/).length;
+}
+
+function evaluateQuestion(qId) {
+  if (qId <= 25) {
+    const q = QUESTIONS_PART1.find((item) => item.id === qId);
+    if (!q) return { answered: false, score: 0, max: 1, status: `unanswered`, details: [] };
+    const chosen = appState.mcqAnswers[String(qId)] || ``;
+    if (!chosen) return { answered: false, score: 0, max: 1, status: `unanswered`, details: [] };
+    const isCorrect = chosen === q.correct;
+    return {
+      answered: true,
+      score: isCorrect ? 1 : 0,
+      max: 1,
+      status: isCorrect ? `correct` : `incorrect`,
+      chosen,
+      correct: q.correct,
+      details: []
+    };
+  }
+
+  const q = QUESTIONS_PART2.find((item) => item.id === qId);
+  if (!q) return { answered: false, score: 0, max: 1, status: `unanswered`, details: [] };
+  const raw = appState.openAnswers[String(qId)] || ``;
+  const trimmed = raw.trim();
+  if (!trimmed) return { answered: false, score: 0, max: 1, status: `unanswered`, details: [] };
+
+  const wc = countWords(trimmed);
+
+  // Exact IELTS short-answer / sentence-completion grading (Q26, 27, 28, 29, 31)
+  if (q.exactPatterns) {
+    const norm = normalizeText(trimmed);
+    const withinLimit = wc <= q.maxWords;
+    const matchesPattern = q.exactPatterns.some((pat) => {
+      const normPat = normalizeText(pat);
+      return norm === normPat || norm.includes(normPat);
+    });
+
+    if (matchesPattern && withinLimit) {
+      return {
+        answered: true,
+        score: 1,
+        max: 1,
+        status: `correct`,
+        wordCount: wc,
+        overLimit: false,
+        details: [
+          { hit: true, text: `Exact textual concept matched ("${q.modelAnswer}").` },
+          { hit: true, text: `Word limit respected (${wc} / ${q.maxWords} words).` }
+        ]
+      };
+    }
+
+    if (matchesPattern && !withinLimit) {
+      return {
+        answered: true,
+        score: 0.5,
+        max: 1,
+        status: `partial`,
+        wordCount: wc,
+        overLimit: true,
+        details: [
+          { hit: true, text: `Core concept detected.` },
+          { hit: false, text: `IELTS word limit exceeded (${wc} words written; maximum is ${q.maxWords}). Partial credit (0.5) awarded.` }
+        ]
+      };
+    }
+
+    return {
+      answered: true,
+      score: 0,
+      max: 1,
+      status: `incorrect`,
+      wordCount: wc,
+      overLimit: !withinLimit,
+      details: [
+        { hit: false, text: `Target textual term not matched. Check paragraph evidence for "${q.modelAnswer}".` },
+        { hit: withinLimit, text: withinLimit ? `Word limit respected (${wc} / ${q.maxWords} words).` : `Exceeded ${q.maxWords}-word limit (${wc} words).` }
+      ]
+    };
+  }
+
+  // Weighted multi-concept analytical open-ended grading (Q30, 32, 33, 34, 35)
+  const norm = normalizeText(trimmed);
+  let totalWeight = 0;
+  const details = q.rubricConcepts.map((concept) => {
+    const matched = concept.keywords.some((kw) => norm.includes(normalizeText(kw)));
+    if (matched) totalWeight += concept.weight;
+    return {
+      hit: matched,
+      text: concept.label
+    };
+  });
+
+  let score = 0;
+  let status = `incorrect`;
+  if (totalWeight >= 0.72) {
+    score = 1;
+    status = `correct`;
+  } else if (totalWeight >= 0.34) {
+    score = 0.5;
+    status = `partial`;
+  }
+
+  return {
+    answered: true,
+    score,
+    max: 1,
+    status,
+    wordCount: wc,
+    overLimit: false,
+    details
+  };
+}
+
+function isItemEvaluated(qId) {
+  return Boolean(appState.gradedAll || appState.checkedItems[String(qId)]);
+}
+
+// ============================================================================
+// RENDERING: QUESTIONS, NAVIGATOR, ANALYTICS SVG & KPIs
+// ============================================================================
+
+function renderPart1() {
+  const container = document.getElementById(`part1-container`);
+  if (!container) return;
+
+  let html = ``;
+  let currentBand = ``;
+
+  QUESTIONS_PART1.forEach((q) => {
+    const ev = evaluateQuestion(q.id);
+    const evaluated = isItemEvaluated(q.id);
+
+    // Filtering
+    if (appState.activeFilter === `part2`) return;
+    if (appState.activeFilter === `unanswered` && ev.answered) return;
+    if (appState.activeFilter === `review` && (!evaluated || ev.status === `correct`)) return;
+
+    if (q.band !== currentBand) {
+      currentBand = q.band;
+      html += `
+        <div class="band-banner">
+          <h3>${currentBand}</h3>
+          <span class="band-tag">CEFR B2–C1</span>
+        </div>
+      `;
+    }
+
+    const cardStateClass = evaluated ? `state-${ev.status}` : ``;
+    let badgeHtml = ``;
+    if (evaluated) {
+      if (!ev.answered) {
+        badgeHtml = `<span class="q-status-badge incorrect">Unanswered (0 / 1)</span>`;
+      } else if (ev.status === `correct`) {
+        badgeHtml = `<span class="q-status-badge correct">Correct (1.0 / 1)</span>`;
+      } else {
+        badgeHtml = `<span class="q-status-badge incorrect">Incorrect (0 / 1)</span>`;
+      }
+    }
+
+    const optionsHtml = q.options.map((opt) => {
+      const isSelected = ev.chosen === opt.key;
+      let cls = `option-label`;
+      if (isSelected) cls += ` selected`;
+      if (evaluated) {
+        if (opt.key === q.correct) cls += ` is-correct-choice`;
+        else if (isSelected && opt.key !== q.correct) cls += ` is-wrong-choice`;
+      }
+      return `
+        <label class="${cls}" for="q${q.id}-opt-${opt.key}">
+          <input type="radio" id="q${q.id}-opt-${opt.key}" name="q-${q.id}" value="${opt.key}" ${isSelected ? `checked` : ``} onchange="handleMcqChange(${q.id}, '${opt.key}')">
+          <span class="option-letter">${opt.key}.</span>
+          <span>${opt.text}</span>
+        </label>
+      `;
+    }).join(``);
+
+    let feedbackHtml = ``;
+    if (evaluated) {
+      const fbCls = ev.status === `correct` ? `fb-correct` : `fb-incorrect`;
+      const leadMsg = ev.status === `correct`
+        ? `Accurate selection (${q.correct}).`
+        : ev.answered
+          ? `You selected (${ev.chosen}); the scholarly answer is (${q.correct}).`
+          : `No option selected. The correct answer is (${q.correct}).`;
+      feedbackHtml = `
+        <div class="feedback-panel ${fbCls}" role="region" aria-label="Feedback for Question ${q.id}">
+          <div class="feedback-title">${leadMsg}</div>
+          <p class="feedback-rationale"><strong>Academic Rationale:</strong> ${q.rationale}</p>
+        </div>
+      `;
+    }
+
+    html += `
+      <article class="question-card ${cardStateClass}" id="question-${q.id}">
+        <div class="q-header">
+          <div class="q-meta">
+            <span class="q-number">Question ${q.id} of 35</span>
+            <span class="q-domain">${q.domain}</span>
+            <span class="q-domain">CEFR ${q.cefr}</span>
+          </div>
+          ${badgeHtml}
+        </div>
+        <p class="q-prompt">${q.prompt}</p>
+        <div class="options-list" role="radiogroup" aria-label="Options for Question ${q.id}">
+          ${optionsHtml}
+        </div>
+        <div class="q-footer">
+          <button type="button" class="btn btn-secondary btn-sm" onclick="checkSingleItem(${q.id})">
+            ${evaluated ? `Re-evaluate Item ${q.id}` : `Check Item ${q.id}`}
+          </button>
+        </div>
+        ${feedbackHtml}
+      </article>
+    `;
+  });
+
+  if (!html && appState.activeFilter !== `part2`) {
+    html = `<div class="leaf-panel"><p style="margin:0;">No Part I questions match the active filter. Switch to <strong>All 35 Questions</strong> to view all items.</p></div>`;
+  }
+  container.innerHTML = html;
+}
+
+function renderPart2Group(passageNum, containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  const list = QUESTIONS_PART2.filter((q) => q.passage === passageNum);
+  let html = ``;
+
+  list.forEach((q) => {
+    const ev = evaluateQuestion(q.id);
+    const evaluated = isItemEvaluated(q.id);
+
+    if (appState.activeFilter === `part1`) return;
+    if (appState.activeFilter === `unanswered` && ev.answered) return;
+    if (appState.activeFilter === `review` && (!evaluated || ev.status === `correct`)) return;
+
+    const val = appState.openAnswers[String(q.id)] || ``;
+    const wc = countWords(val);
+    const overLimit = q.exactPatterns && wc > q.maxWords;
+    const cardStateClass = evaluated ? `state-${ev.status}` : ``;
+
+    let badgeHtml = ``;
+    if (evaluated) {
+      if (ev.status === `correct`) badgeHtml = `<span class="q-status-badge correct">Full Credit (1.0 / 1)</span>`;
+      else if (ev.status === `partial`) badgeHtml = `<span class="q-status-badge partial">Partial Credit (0.5 / 1)</span>`;
+      else badgeHtml = `<span class="q-status-badge incorrect">Needs Review (0 / 1)</span>`;
+    }
+
+    const inputHtml = q.exactPatterns
+      ? `<input type="text" id="open-input-${q.id}" class="open-text-input" value="${escapeHtmlAttr(val)}" placeholder="${escapeHtmlAttr(q.placeholder)}" oninput="handleOpenInput(${q.id}, this.value)">`
+      : `<textarea id="open-input-${q.id}" class="open-textarea" placeholder="${escapeHtmlAttr(q.placeholder)}" oninput="handleOpenInput(${q.id}, this.value)">${escapeHtmlText(val)}</textarea>`;
+
+    let feedbackHtml = ``;
+    if (evaluated) {
+      const fbCls = ev.status === `correct` ? `fb-correct` : ev.status === `partial` ? `fb-partial` : `fb-incorrect`;
+      const checklistHtml = ev.details.length
+        ? `<ul class="rubric-checklist">${ev.details.map((d) => `<li class="${d.hit ? `rubric-hit` : `rubric-miss`}">${d.hit ? `[Met]` : `[Missed]`} ${d.text}</li>`).join(``)}</ul>`
+        : ``;
+
+      feedbackHtml = `
+        <div class="feedback-panel ${fbCls}" role="region" aria-label="Feedback for Question ${q.id}">
+          <div class="feedback-title">Automated Rubric Score: ${ev.score.toFixed(1)} / 1.0 point</div>
+          ${checklistHtml}
+          <p class="feedback-rationale"><strong>Model Answer:</strong> <em>${q.modelAnswer}</em></p>
+          <p class="feedback-rationale"><strong>Textual Rationale:</strong> ${q.rationale}</p>
+        </div>
+      `;
+    }
+
+    html += `
+      <article class="question-card ${cardStateClass}" id="question-${q.id}">
+        <div class="q-header">
+          <div class="q-meta">
+            <span class="q-number">Question ${q.id} of 35</span>
+            <span class="q-domain">${q.taskType}</span>
+          </div>
+          ${badgeHtml}
+        </div>
+        <p class="q-prompt">${q.prompt}</p>
+        <div class="open-input-group">
+          <label for="open-input-${q.id}">Your Academic Response (Question ${q.id})</label>
+          ${inputHtml}
+          <div class="word-counter ${overLimit ? `over-limit` : ``}" id="wc-${q.id}">
+            Word count: ${wc}${q.exactPatterns ? ` / ${q.maxWords} max (strict IELTS limit)` : ` words (recommended 12–55 words)`}
+          </div>
+        </div>
+        <div class="q-footer">
+          <button type="button" class="btn btn-secondary btn-sm" onclick="checkSingleItem(${q.id})">
+            ${evaluated ? `Re-grade Item ${q.id}` : `Grade Item ${q.id}`}
+          </button>
+        </div>
+        ${feedbackHtml}
+      </article>
+    `;
+  });
+
+  if (!html && appState.activeFilter !== `part1`) {
+    html = `<div class="leaf-panel"><p style="margin:0;">No items in this passage match the active filter.</p></div>`;
+  }
+  container.innerHTML = html;
+}
+
+function escapeHtmlAttr(str) {
+  return String(str || ``)
+    .replace(/&/g, `&amp;`)
+    .replace(/"/g, `&quot;`)
+    .replace(/</g, `&lt;`)
+    .replace(/>/g, `&gt;`);
+}
+
+function escapeHtmlText(str) {
+  return String(str || ``)
+    .replace(/&/g, `&amp;`)
+    .replace(/</g, `&lt;`)
+    .replace(/>/g, `&gt;`);
+}
+
+function renderNavigators() {
+  const p1Nav = document.getElementById(`nav-matrix-p1`);
+  const p2Nav = document.getElementById(`nav-matrix-p2`);
+  if (!p1Nav || !p2Nav) return;
+
+  const makeChips = (ids) => ids.map((id) => {
+    const ev = evaluateQuestion(id);
+    const evaluated = isItemEvaluated(id);
+    let cls = `q-chip`;
+    if (evaluated) {
+      cls += ` ${ev.status}`;
+    } else if (ev.answered) {
+      cls += ` answered`;
+    }
+    return `<button type="button" class="${cls}" onclick="jumpToQuestion(${id})" aria-label="Jump to Question ${id}">${id}</button>`;
+  }).join(``);
+
+  p1Nav.innerHTML = makeChips(QUESTIONS_PART1.map((q) => q.id));
+  p2Nav.innerHTML = makeChips(QUESTIONS_PART2.map((q) => q.id));
+}
+
+function renderScoreboardAndAnalytics() {
+  let answeredP1 = 0;
+  let answeredP2 = 0;
+  let evaluatedCount = 0;
+  let totalScore = 0;
+  let p1Score = 0;
+  let p2Score = 0;
+
+  const domainStats = {};
+  const initDomain = (name) => {
+    if (!domainStats[name]) domainStats[name] = { score: 0, max: 0, evaluated: 0 };
+  };
+
+  QUESTIONS_PART1.forEach((q) => {
+    initDomain(q.domain);
+    domainStats[q.domain].max += 1;
+    const ev = evaluateQuestion(q.id);
+    if (ev.answered) answeredP1 += 1;
+    if (isItemEvaluated(q.id)) {
+      evaluatedCount += 1;
+      totalScore += ev.score;
+      p1Score += ev.score;
+      domainStats[q.domain].score += ev.score;
+      domainStats[q.domain].evaluated += 1;
+    }
+  });
+
+  QUESTIONS_PART2.forEach((q) => {
+    initDomain(q.domain);
+    domainStats[q.domain].max += 1;
+    const ev = evaluateQuestion(q.id);
+    if (ev.answered) answeredP2 += 1;
+    if (isItemEvaluated(q.id)) {
+      evaluatedCount += 1;
+      totalScore += ev.score;
+      p2Score += ev.score;
+      domainStats[q.domain].score += ev.score;
+      domainStats[q.domain].evaluated += 1;
+    }
+  });
+
+  const totalAnswered = answeredP1 + answeredP2;
+  const kpiComp = document.getElementById(`kpi-completion`);
+  const kpiCompSub = document.getElementById(`kpi-completion-sub`);
+  const kpiScore = document.getElementById(`kpi-score`);
+  const kpiPercent = document.getElementById(`kpi-percent`);
+  const kpiCefr = document.getElementById(`kpi-cefr`);
+  const kpiCefrNote = document.getElementById(`kpi-cefr-note`);
+  const kpiSplit = document.getElementById(`kpi-split`);
+  const kpiSplitNote = document.getElementById(`kpi-split-note`);
+  const statusEl = document.getElementById(`toolbar-status`);
+
+  if (kpiComp) kpiComp.textContent = `${totalAnswered} / 35`;
+  if (kpiCompSub) kpiCompSub.textContent = `Part I: ${answeredP1}/25 · Part II: ${answeredP2}/10`;
+
+  // Rubric row highlighting
+  const rows = document.querySelectorAll(`#rubric-tbody tr`);
+  rows.forEach((r) => r.classList.remove(`active-band`));
+
+  if (evaluatedCount === 0) {
+    if (kpiScore) kpiScore.textContent = `-- / 35.0`;
+    if (kpiPercent) {
+      kpiPercent.textContent = `Awaiting Grading`;
+      kpiPercent.className = `figure-delta`;
+    }
+    if (kpiCefr) kpiCefr.textContent = `Pending`;
+    if (kpiCefrNote) kpiCefrNote.textContent = `Target Band: B2–C1 (Grade 8 Bilingual)`;
+    if (kpiSplit) kpiSplit.textContent = `--% / --%`;
+    if (kpiSplitNote) kpiSplitNote.textContent = `MCQ Knowledge vs. IELTS Reading`;
+    if (statusEl) {
+      statusEl.textContent = `Progress: ${totalAnswered} of 35 responses entered. Click "Grade Full Pretest" when ready.`;
+    }
+  } else {
+    const pct = (totalScore / 35) * 100;
+    const p1Pct = (p1Score / 25) * 100;
+    const p2Pct = (p2Score / 10) * 100;
+
+    if (kpiScore) kpiScore.textContent = `${totalScore.toFixed(1)} / 35.0`;
+    if (kpiPercent) {
+      kpiPercent.textContent = `${pct.toFixed(1)}% (${evaluatedCount}/35 items graded)`;
+      kpiPercent.className = pct >= 68 ? `figure-delta positive` : `figure-delta`;
+    }
+    if (kpiSplit) kpiSplit.textContent = `${p1Pct.toFixed(0)}% / ${p2Pct.toFixed(0)}%`;
+    if (kpiSplitNote) kpiSplitNote.textContent = `Part I: ${p1Score.toFixed(1)}/25 · Part II: ${p2Score.toFixed(1)}/10`;
+
+    let bandKey = `below`;
+    let bandLabel = `B1+ Developing`;
+    let bandNote = `IELTS Equiv. 5.0–5.5 · Reinforce academic inference`;
+    if (totalScore >= 30.0) {
+      bandKey = `c1`;
+      bandLabel = `C1 Proficient`;
+      bandNote = `IELTS Equiv. 7.5–8.0 · Exceeds Grade 8 benchmark`;
+    } else if (totalScore >= 24.5) {
+      bandKey = `b2plus`;
+      bandLabel = `B2+ Strong`;
+      bandNote = `IELTS Equiv. 6.5–7.0 · Ready for C1 humanities`;
+    } else if (totalScore >= 17.5) {
+      bandKey = `b2`;
+      bandLabel = `B2 Upper-Int.`;
+      bandNote = `IELTS Equiv. 6.0–6.5 · Meets Grade 8 bilingual target`;
+    }
+
+    if (kpiCefr) kpiCefr.textContent = bandLabel;
+    if (kpiCefrNote) kpiCefrNote.textContent = bandNote;
+
+    const activeRow = document.querySelector(`#rubric-tbody tr[data-band="${bandKey}"]`);
+    if (activeRow) activeRow.classList.add(`active-band`);
+
+    if (statusEl) {
+      statusEl.textContent = `Graded ${evaluatedCount}/35 items · Current Score: ${totalScore.toFixed(1)} / 35.0 (${bandLabel}).`;
+    }
+  }
+
+  renderDomainSvgChart(domainStats);
+}
+
+function renderDomainSvgChart(domainStats) {
+  const container = document.getElementById(`domain-chart-container`);
+  if (!container) return;
+
+  const entries = Object.entries(domainStats);
+  const barHeight = 22;
+  const rowGap = 36;
+  const svgHeight = entries.length * rowGap + 24;
+  const labelWidth = 175;
+  const barAreaWidth = 260;
+
+  let rowsSvg = ``;
+  entries.forEach(([name, st], idx) => {
+    const y = 14 + idx * rowGap;
+    const pct = st.max > 0 ? (st.score / st.max) : 0;
+    const fillW = Math.round(pct * barAreaWidth);
+    const displayLabel = name.length > 24 ? `${name.slice(0, 23)}…` : name;
+    const barColor = st.evaluated === 0
+      ? `var(--data-context)`
+      : pct >= 0.7 ? `var(--data-3)` : pct >= 0.5 ? `var(--data-1)` : `var(--data-2)`;
+
+    rowsSvg += `
+      <text x="4" y="${y + 15}" font-family="Times New Roman, serif" font-size="12.5" font-weight="700" fill="var(--on-surface)">${displayLabel}</text>
+      <rect x="${labelWidth}" y="${y}" width="${barAreaWidth}" height="${barHeight}" fill="var(--surface-container)" stroke="var(--outline-variant)" stroke-width="1"/>
+      <rect x="${labelWidth}" y="${y}" width="${fillW}" height="${barHeight}" fill="${barColor}"/>
+      <text x="${labelWidth + barAreaWidth + 10}" y="${y + 15}" font-family="Times New Roman, serif" font-size="12.5" font-weight="700" fill="var(--on-surface)">${st.score.toFixed(1)} / ${st.max}</text>
+    `;
+  });
+
+  container.innerHTML = `
+    <svg viewBox="0 0 510 ${svgHeight}" style="width: 100%; height: auto; display: block;" role="img" aria-label="Horizontal bar chart of scores across the seven assessment domains">
+      ${rowsSvg}
+    </svg>
+  `;
+}
+
+function renderVisibilityByFilter() {
+  const p1Sec = document.getElementById(`part1-section`);
+  const p2Sec = document.getElementById(`part2-section`);
+  if (!p1Sec || !p2Sec) return;
+
+  if (appState.activeFilter === `part1`) {
+    p1Sec.classList.remove(`hidden`);
+    p2Sec.classList.add(`hidden`);
+  } else if (appState.activeFilter === `part2`) {
+    p1Sec.classList.add(`hidden`);
+    p2Sec.classList.remove(`hidden`);
+  } else {
+    p1Sec.classList.remove(`hidden`);
+    p2Sec.classList.remove(`hidden`);
+  }
+}
+
+function renderAll() {
+  renderVisibilityByFilter();
+  renderPart1();
+  renderPart2Group(1, `part2-p1-container`);
+  renderPart2Group(2, `part2-p2-container`);
+  renderNavigators();
+  renderScoreboardAndAnalytics();
+
+  const refEl = document.getElementById(`reference-compendium`);
+  const refBtn = document.getElementById(`toggle-refs-btn`);
+  if (refEl && refBtn) {
+    if (appState.showReferences) {
+      refEl.classList.remove(`hidden`);
+      refBtn.textContent = `Hide Reference Aids`;
+    } else {
+      refEl.classList.add(`hidden`);
+      refBtn.textContent = `Show Reference Aids`;
+    }
+  }
+}
+
+// ============================================================================
+// INTERACTION HANDLERS (ALL HOISTED FUNCTION DECLARATIONS)
+// ============================================================================
+
+function persistState() {
+  if (window.notebookAppApi && typeof window.notebookAppApi.setAppState === `function`) {
+    window.notebookAppApi.setAppState(appState);
+  }
+}
+
+function handleStudentMetaChange() {
+  const nameInput = document.getElementById(`student-name`);
+  const idInput = document.getElementById(`student-id`);
+  appState.studentName = nameInput ? nameInput.value : ``;
+  appState.studentId = idInput ? idInput.value : ``;
+  persistState();
+}
+
+function handleMcqChange(qId, optKey) {
+  appState.mcqAnswers[String(qId)] = optKey;
+  persistState();
+
+  // Update visual selection and counters cleanly without losing focus
+  const card = document.getElementById(`question-${qId}`);
+  if (card) {
+    const labels = card.querySelectorAll(`.option-label`);
+    labels.forEach((lbl) => lbl.classList.remove(`selected`));
+    const checkedRadio = card.querySelector(`input[name="q-${qId}"]:checked`);
+    if (checkedRadio && checkedRadio.parentElement) {
+      checkedRadio.parentElement.classList.add(`selected`);
+    }
+  }
+  if (isItemEvaluated(qId)) {
+    renderAll();
+  } else {
+    renderNavigators();
+    renderScoreboardAndAnalytics();
+  }
+}
+
+function handleOpenInput(qId, value) {
+  appState.openAnswers[String(qId)] = value;
+  persistState();
+
+  const q = QUESTIONS_PART2.find((item) => item.id === qId);
+  const wcEl = document.getElementById(`wc-${qId}`);
+  if (q && wcEl) {
+    const wc = countWords(value);
+    const overLimit = q.exactPatterns && wc > q.maxWords;
+    wcEl.textContent = `Word count: ${wc}${q.exactPatterns ? ` / ${q.maxWords} max (strict IELTS limit)` : ` words (recommended 12–55 words)`}`;
+    wcEl.className = overLimit ? `word-counter over-limit` : `word-counter`;
+  }
+  renderNavigators();
+  renderScoreboardAndAnalytics();
+}
+
+function checkSingleItem(qId) {
+  appState.checkedItems[String(qId)] = true;
+  persistState();
+  renderAll();
+  const target = document.getElementById(`question-${qId}`);
+  if (target) target.scrollIntoView({ behavior: `smooth`, block: `nearest` });
+}
+
+function gradeEntireAssessment() {
+  appState.gradedAll = true;
+  ALL_QUESTION_IDS.forEach((id) => {
+    appState.checkedItems[String(id)] = true;
+  });
+  persistState();
+  renderAll();
+  window.scrollTo({ top: 0, behavior: `smooth` });
+}
+
+function toggleReferenceCompendium() {
+  appState.showReferences = !appState.showReferences;
+  persistState();
+  renderAll();
+}
+
+function setQuestionFilter(filterKey, btnEl) {
+  appState.activeFilter = filterKey;
+  const allBtns = document.querySelectorAll(`.filter-btn`);
+  allBtns.forEach((b) => b.setAttribute(`aria-pressed`, `false`));
+  if (btnEl) btnEl.setAttribute(`aria-pressed`, `true`);
+  persistState();
+  renderAll();
+}
+
+function jumpToQuestion(qId) {
+  // Ensure the target question is visible under current filter
+  if ((qId <= 25 && appState.activeFilter === `part2`) || (qId >= 26 && appState.activeFilter === `part1`)) {
+    appState.activeFilter = `all`;
+    const allBtns = document.querySelectorAll(`.filter-btn`);
+    allBtns.forEach((b) => b.setAttribute(`aria-pressed`, b.dataset.filter === `all` ? `true` : `false`));
+    renderAll();
+  }
+  const el = document.getElementById(`question-${qId}`);
+  if (el) {
+    el.scrollIntoView({ behavior: `smooth`, block: `center` });
+  }
+}
+
+function handleResetPretest(btn) {
+  if (!btn) return;
+  if (btn.dataset.armed !== `true`) {
+    btn.dataset.armed = `true`;
+    btn.textContent = `Confirm Reset (Click Again)`;
+    setTimeout(() => {
+      if (btn.dataset.armed === `true`) {
+        btn.dataset.armed = `false`;
+        btn.textContent = `Reset All Answers`;
+      }
+    }, 4500);
+    return;
+  }
+
+  btn.dataset.armed = `false`;
+  btn.textContent = `Reset All Answers`;
+
+  appState.mcqAnswers = {};
+  appState.openAnswers = {};
+  appState.checkedItems = {};
+  appState.gradedAll = false;
+  appState.activeFilter = `all`;
+  const allBtns = document.querySelectorAll(`.filter-btn`);
+  allBtns.forEach((b) => b.setAttribute(`aria-pressed`, b.dataset.filter === `all` ? `true` : `false`));
+
+  persistState();
+  renderAll();
+}
+
+function exportScoreReport() {
+  const name = appState.studentName || `Unnamed Student`;
+  const sid = appState.studentId || `N/A`;
+  let totalScore = 0;
+  const lines = [
+    `LOY KRATHONG CULTURAL & ACADEMIC PRETEST ASSESSMENT (CEFR B2–C1)`,
+    `Student: ${name} | Track ID: ${sid}`,
+    `----------------------------------------------------------------`,
+    ``
+  ];
+
+  QUESTIONS_PART1.forEach((q) => {
+    const ev = evaluateQuestion(q.id);
+    totalScore += ev.score;
+    lines.push(`Q${q.id} [MCQ - ${q.domain}]: Chosen=${ev.chosen || `None`} | Correct=${q.correct} | Score=${ev.score.toFixed(1)}/1.0`);
+  });
+
+  lines.push(``);
+  QUESTIONS_PART2.forEach((q) => {
+    const ev = evaluateQuestion(q.id);
+    totalScore += ev.score;
+    const ans = (appState.openAnswers[String(q.id)] || `No response`).replace(/\n/g, ` `);
+    lines.push(`Q${q.id} [IELTS Reading]: Score=${ev.score.toFixed(1)}/1.0`);
+    lines.push(`  Response: ${ans}`);
+    lines.push(`  Model: ${q.modelAnswer}`);
+  });
+
+  const pct = ((totalScore / 35) * 100).toFixed(1);
+  let band = `B1+ Developing`;
+  if (totalScore >= 30.0) band = `C1 Proficient`;
+  else if (totalScore >= 24.5) band = `B2+ Strong`;
+  else if (totalScore >= 17.5) band = `B2 Upper-Intermediate`;
+
+  lines.splice(2, 0, `Composite Score: ${totalScore.toFixed(1)} / 35.0 (${pct}%) | Estimated CEFR Band: ${band}`);
+
+  const reportText = lines.join(`\n`);
+  if (window.notebookAppApi && typeof window.notebookAppApi.triggerFileDownload === `function`) {
+    window.notebookAppApi.triggerFileDownload({
+      content: reportText,
+      contentType: `text/plain`,
+      encoding: `UTF-8`,
+      filename: `loy-krathong-pretest-report.txt`
+    });
+  } else {
+    const statusEl = document.getElementById(`toolbar-status`);
+    if (statusEl) statusEl.textContent = `Report generated (${totalScore.toFixed(1)} / 35.0 — ${band}).`;
+  }
+}
+
+// ============================================================================
+// INITIALIZATION & STATE RESTORATION
+// ============================================================================
+
+async function initializeAssessment() {
+  try {
+    if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === `function`) {
+      const saved = await window.notebookAppApi.getAppState();
+      if (saved && typeof saved === `object`) {
+        appState = {
+          studentName: saved.studentName || ``,
+          studentId: saved.studentId || ``,
+          mcqAnswers: saved.mcqAnswers || {},
+          openAnswers: saved.openAnswers || {},
+          checkedItems: saved.checkedItems || {},
+          gradedAll: Boolean(saved.gradedAll),
+          activeFilter: saved.activeFilter || `all`,
+          showReferences: typeof saved.showReferences === `boolean` ? saved.showReferences : true
+        };
+      }
+    }
+  } catch (err) {
+    // Proceed cleanly with default empty pretest state
+  }
+
+  const nameInput = document.getElementById(`student-name`);
+  const idInput = document.getElementById(`student-id`);
+  if (nameInput) nameInput.value = appState.studentName;
+  if (idInput) idInput.value = appState.studentId;
+
+  const allBtns = document.querySelectorAll(`.filter-btn`);
+  allBtns.forEach((b) => b.setAttribute(`aria-pressed`, b.dataset.filter === appState.activeFilter ? `true` : `false`));
+
+  renderAll();
+
+  if (window.notebookAppApi && typeof window.notebookAppApi.notifyAppReady === `function`) {
+    window.notebookAppApi.notifyAppReady();
+  }
+}
+
+document.addEventListener(`DOMContentLoaded`, initializeAssessment);
+</script>
+</body>
+</html>
